@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "@/styles/global.scss";
-import MyImageComponent from "@/pollen/sizing/text-component";
+import MyImageComponent from "@/pollen/example-component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
           alt="Descrição da imagem"
           objectFit="cover"
           sizing={{
-            width: "120px",
+            width: "w-fx-120",
           }}
         />
         {children}

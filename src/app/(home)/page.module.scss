@@ -1,0 +1,21 @@
+// @use "../styles/_mixings";
+// @use "../styles/_variables";
+// @use "../styles/_theme";
+
+// .text {
+//   color: red;
+
+//   @include screen-min(sm) {
+//     color: blue;
+//   }
+// }
+
+// @include dark-mode {
+//   .text {
+//     color: #730a0ad0;
+
+//     @include screen-min(sm) {
+//       color: #050568;
+//     }
+//   }
+// }

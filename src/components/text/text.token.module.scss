@@ -1,0 +1,22 @@
+@use "../../styles/" as vars;
+
+.text__style--normal {
+  font-style: normal;
+}
+
+.text__style--link {
+  text-decoration: underline;
+}
+
+.text__style--upper {
+  text-transform: uppercase;
+}
+
+@mixin bodyLargeRegular {
+  font-size: vars.$font-size-large;
+  font-weight: vars.$font-weight-bold;
+}
+
+.body-large-regular {
+  @include bodyLargeRegular();
+}

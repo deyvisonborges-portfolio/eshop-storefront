@@ -1,0 +1,53 @@
+@use "./variables";
+
+$themes:
+  (
+    dark: (
+      "color-neutral-white": $color-neutral-white,
+      "color-neutral-grey-10": $color-neutral-grey-10,
+      "color-neutral-grey-20": $color-neutral-grey-20,
+      "color-neutral-grey-30": $color-neutral-grey-30,
+      "color-neutral-grey-40": $color-neutral-grey-40,
+      "color-neutral-grey-50": $color-neutral-grey-50,
+      "color-neutral-grey-60": $color-neutral-grey-60,
+      "color-semantic-informative-blue-10": $color-semantic-informative-blue-10,
+      "color-semantic-informative-blue-50": $color-semantic-informative-blue-50,
+      "color-semantic-warning-yellow-10": $color-semantic-warning-yellow-10,
+      "color-semantic-warning-yellow-50": $color-semantic-warning-yellow-50,
+      "color-semantic-danger-red-10": $color-semantic-danger-red-10,
+      "color-semantic-danger-red-50": $color-semantic-danger-red-50,
+      "color-semantic-success-green-10": $color-semantic-success-green-10,
+      "color-semantic-success-green-50": $color-semantic-success-green-50,
+    ),
+    light: (
+      "color-neutral-white": $color-neutral-white,
+      "color-neutral-grey-10": $color-neutral-grey-10,
+      "color-neutral-grey-20": $color-neutral-grey-20,
+      "color-neutral-grey-30": $color-neutral-grey-30,
+      "color-neutral-grey-40": $color-neutral-grey-40,
+      "color-neutral-grey-50": $color-neutral-grey-50,
+      "color-neutral-grey-60": $color-neutral-grey-60,
+      "color-semantic-informative-blue-10": $color-semantic-informative-blue-10,
+      "color-semantic-informative-blue-50": $color-semantic-informative-blue-50,
+      "color-semantic-warning-yellow-10": $color-semantic-warning-yellow-10,
+      "color-semantic-warning-yellow-50": $color-semantic-warning-yellow-50,
+      "color-semantic-danger-red-10": $color-semantic-danger-red-10,
+      "color-semantic-danger-red-50": $color-semantic-danger-red-50,
+      "color-semantic-success-green-10": $color-semantic-success-green-10,
+      "color-semantic-success-green-50": $color-semantic-success-green-50,
+    )
+  );
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}

@@ -1,0 +1,7 @@
+@use "../../styles/" as vars;
+
+.logo {
+  color: vars.$color-semantic-informative-blue-50;
+  font-size: vars.$font-size-large;
+  font-weight: vars.$font-weight-medium;
+}

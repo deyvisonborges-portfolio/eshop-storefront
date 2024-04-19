@@ -1,0 +1,38 @@
+@use "../../../../styles" as vars;
+
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 16px 96px;
+}
+
+.content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.title {
+  color: vars.$color-neutral-grey-60;
+  font-size: 64px;
+  font-weight: vars.$font-weight-light;
+}
+
+.description {
+  color: vars.$color-neutral-grey-40;
+  font-size: vars.$font-size-medium;
+  font-weight: vars.$font-weight-light;
+  max-width: 420px;
+  width: 100%;
+}
+
+.product-grid {
+  display: flex;
+  gap: 32px;
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "@/styles/global.scss";
+import MyImageComponent from "@/pollen/sizing/text-component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <MyImageComponent
+          src="https://avatars.githubusercontent.com/u/82906575?s=200&v=4"
+          alt="Descrição da imagem"
+          objectFit="cover"
+          sizing={{
+            width: "120px",
+          }}
+        />
         {children}
       </body>
     </html>

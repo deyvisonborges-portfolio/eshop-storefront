@@ -1,0 +1,41 @@
+.button {
+  border: 0;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  /****** States ******/
+  /* Active (when a mouse or keyboard is pressing) */
+  &:active {
+    outline: solid 2px blue;
+    outline-offset: 2px;
+  }
+
+  /* Focus */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+    outline: solid 2px blue;
+    outline-offset: 2px;
+  }
+
+  /* Disabled */
+  &:disabled,
+  &[disabled] {
+    background-color: var(--color-neutral-400);
+    border-color: transparent;
+    color: #000;
+    pointer-events: none;
+  }
+}
+
+/****** Variants ******/
+.button__primary {
+}
+.button__secondary {
+}
+.button__ghost {
+}

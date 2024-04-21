@@ -1,5 +1,6 @@
 @use "./mixings";
 @use "./variables";
+
 // @use "./theme";
 
 // Nao necessario no momento
@@ -49,4 +50,12 @@
 h1, h2, h3, h4, h5, h6, p, span {
   padding: 0;
   margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
 }

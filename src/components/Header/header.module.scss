@@ -1,0 +1,39 @@
+@use "../../styles" as vars;
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: min-content;
+  justify-content: space-between;
+  padding: 40px 96px;
+  position: sticky;
+}
+
+.action-group {
+  align-items: center;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: fit-content;
+}
+
+.action-group--auth {
+  display: flex;
+  gap: 24px;
+}
+
+.action-group--auth-item {
+  display: flex;
+  gap: 12px;
+
+  & > p {
+    font-size: vars.$font-size-medium;
+  }
+}
+
+.action-group--icons {
+  display: flex;
+  gap: 24px;
+}

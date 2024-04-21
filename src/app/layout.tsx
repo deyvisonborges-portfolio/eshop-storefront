@@ -19,14 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MyImageComponent
+        {/* <MyImageComponent
           src="https://avatars.githubusercontent.com/u/82906575?s=200&v=4"
           alt="Descrição da imagem"
           objectFit="cover"
           sizing={{
             width: "w-fx-120",
           }}
-        />
+        /> */}
         {children}
       </body>
     </html>

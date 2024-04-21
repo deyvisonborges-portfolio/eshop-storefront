@@ -1,0 +1,20 @@
+@use "../../styles" as vars;
+
+.container {
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  & > span {
+    align-items: center;
+    background-color: vars.$color-semantic-informative-blue-10;
+    border-radius: 16px;
+    content: "";
+    font-size: vars.$font-size-small;
+    display: flex;
+    padding: 4px 8px;
+    position: absolute;
+    right: -8px;
+    top: -4px;
+  }
+}

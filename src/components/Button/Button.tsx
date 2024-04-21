@@ -3,7 +3,7 @@ import {
   ButtonColorType,
   ButtonVariantSize,
   ButtonVariantType,
-} from "./button.types";
+} from "./Button.types";
 
 import styles from "./Button.module.scss";
 

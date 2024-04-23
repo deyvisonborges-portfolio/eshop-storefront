@@ -1,4 +1,4 @@
-import { Product } from "@/components/product";
+import { Product } from "@/components/Product";
 import styles from "./hero-section.module.scss";
 
 export const HeroSection = () => {

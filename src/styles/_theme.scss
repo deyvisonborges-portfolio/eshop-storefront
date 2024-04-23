@@ -1,53 +1,79 @@
-@use "./variables";
+@use "./variables" as vars;
 
-$themes:
-  (
-    dark: (
-      "color-neutral-white": $color-neutral-white,
-      "color-neutral-grey-10": $color-neutral-grey-10,
-      "color-neutral-grey-20": $color-neutral-grey-20,
-      "color-neutral-grey-30": $color-neutral-grey-30,
-      "color-neutral-grey-40": $color-neutral-grey-40,
-      "color-neutral-grey-50": $color-neutral-grey-50,
-      "color-neutral-grey-60": $color-neutral-grey-60,
-      "color-semantic-informative-blue-10": $color-semantic-informative-blue-10,
-      "color-semantic-informative-blue-50": $color-semantic-informative-blue-50,
-      "color-semantic-warning-yellow-10": $color-semantic-warning-yellow-10,
-      "color-semantic-warning-yellow-50": $color-semantic-warning-yellow-50,
-      "color-semantic-danger-red-10": $color-semantic-danger-red-10,
-      "color-semantic-danger-red-50": $color-semantic-danger-red-50,
-      "color-semantic-success-green-10": $color-semantic-success-green-10,
-      "color-semantic-success-green-50": $color-semantic-success-green-50,
-    ),
-    light: (
-      "color-neutral-white": $color-neutral-white,
-      "color-neutral-grey-10": $color-neutral-grey-10,
-      "color-neutral-grey-20": $color-neutral-grey-20,
-      "color-neutral-grey-30": $color-neutral-grey-30,
-      "color-neutral-grey-40": $color-neutral-grey-40,
-      "color-neutral-grey-50": $color-neutral-grey-50,
-      "color-neutral-grey-60": $color-neutral-grey-60,
-      "color-semantic-informative-blue-10": $color-semantic-informative-blue-10,
-      "color-semantic-informative-blue-50": $color-semantic-informative-blue-50,
-      "color-semantic-warning-yellow-10": $color-semantic-warning-yellow-10,
-      "color-semantic-warning-yellow-50": $color-semantic-warning-yellow-50,
-      "color-semantic-danger-red-10": $color-semantic-danger-red-10,
-      "color-semantic-danger-red-50": $color-semantic-danger-red-50,
-      "color-semantic-success-green-10": $color-semantic-success-green-10,
-      "color-semantic-success-green-50": $color-semantic-success-green-50,
-    )
-  );
+$themes: (
+  dark: (
+    "color-neutral-white": red,
+    "color-neutral-grey-10": vars.$color-neutral-grey-10,
+    "color-neutral-grey-20": vars.$color-neutral-grey-20,
+    "color-neutral-grey-30": vars.$color-neutral-grey-30,
+    "color-neutral-grey-40": vars.$color-neutral-grey-40,
+    "color-neutral-grey-50": vars.$color-neutral-grey-50,
+    "color-neutral-grey-60": vars.$color-neutral-grey-60,
+    "color-semantic-informative-blue-10":
+      vars.$color-semantic-informative-blue-10,
+    "color-semantic-informative-blue-50":
+      vars.$color-semantic-informative-blue-50,
+    "color-semantic-warning-yellow-10": vars.$color-semantic-warning-yellow-10,
+    "color-semantic-warning-yellow-50": vars.$color-semantic-warning-yellow-50,
+    "color-semantic-danger-red-10": vars.$color-semantic-danger-red-10,
+    "color-semantic-danger-red-50": vars.$color-semantic-danger-red-50,
+    "color-semantic-success-green-10": vars.$color-semantic-success-green-10,
+    "color-semantic-success-green-50": vars.$color-semantic-success-green-50,
+  ),
+  light: (
+    "color-neutral-white": vars.$color-neutral-white,
+    "color-neutral-grey-10": vars.$color-neutral-grey-10,
+    "color-neutral-grey-20": vars.$color-neutral-grey-20,
+    "color-neutral-grey-30": vars.$color-neutral-grey-30,
+    "color-neutral-grey-40": vars.$color-neutral-grey-40,
+    "color-neutral-grey-50": vars.$color-neutral-grey-50,
+    "color-neutral-grey-60": vars.$color-neutral-grey-60,
+    "color-semantic-informative-blue-10":
+      vars.$color-semantic-informative-blue-10,
+    "color-semantic-informative-blue-50":
+      vars.$color-semantic-informative-blue-50,
+    "color-semantic-warning-yellow-10": vars.$color-semantic-warning-yellow-10,
+    "color-semantic-warning-yellow-50": vars.$color-semantic-warning-yellow-50,
+    "color-semantic-danger-red-10": vars.$color-semantic-danger-red-10,
+    "color-semantic-danger-red-50": vars.$color-semantic-danger-red-50,
+    "color-semantic-success-green-10": vars.$color-semantic-success-green-10,
+    "color-semantic-success-green-50": vars.$color-semantic-success-green-50,
+  ),
+  fallback: (
+    "color-neutral-white": #FFFFFF
+  )
+);
 
-@mixin theme() {
-  @each $theme, $map in $themes {
-    $theme-map: $map !global;
-    .#{$theme} & {
-      @content;
-    }
+@function get-theme() {
+  @if (prefers-color-scheme(dark)) {
+    @return "dark";
+  } @else if (prefers-color-scheme(light)) {
+    @return "light";
+  } @else {
+    @return "fallback";
   }
+}
+@mixin theme() {
+  $theme: get-theme();
+  $theme-map: map-get($themes, $theme) !global;
+  @content;
   $theme-map: null !global;
 }
 
 @function theme-get($key) {
-  @return map-get($theme-map, $key);
+  $theme: get-theme();
+  $theme-map: map-get($themes, $theme);
+  
+  @if $theme-map {
+    @return map-get($theme-map, $key);
+  } @else {
+    @warn "Tema não encontrado para '#{$theme}', usando cor de fallback.";
+    @return #CCCCCC;
+  }
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
 }

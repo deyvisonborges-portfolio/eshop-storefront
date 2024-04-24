@@ -1,20 +1,88 @@
 @use "../../styles" as styles;
 
-.wrapper {
+.product-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  height: fit-content;
-  max-width: 312px;
+  gap: 16px;
+  height: 350px;
+  position: relative;
+  width: 270px;
+}
+
+.product-image--container {
+  border-radius: 4px;
+  background-color: styles.$color-neutral-grey-10;
+  height: 100%;
+  max-height: 250px;
+  position: relative;
   width: 100%;
+}
 
-  transition: all .2s ease-in-out;
+.product-image--content {
+  height: 100%;
+  object-fit: contain;
+  padding: 16px 40px;
+  width: 100%;
+}
 
-  &:hover {
-    border-radius: 24px;
-    cursor: pointer;
-    transform: scale(1.1);
+.product-image--add-to-cart {
+  align-items: center;
+  background-color: styles.$color-neutral-grey-60;
+  bottom: -10px;
+  color: styles.$color-neutral-grey-10;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  padding: 12px;
+  position: absolute;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  width: 100%;
+}
+
+.product-image--action-group {
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+  opacity: 0;
+  padding: 12px;
+  position: absolute;
+  right: -10px;
+  transition: opacity 0.3s ease, right 0.3s ease;
+  top: 0;
+}
+
+.product-image--action-group--icon {
+  align-items: center;
+  background-color: styles.$color-neutral-white;
+  border-radius: 50%;
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  position: relative;
+  width: 34px;
+
+  & > svg {
+    position: absolute;
   }
+}
+
+.product-image--container:hover {
+  .product-image--action-group {
+    opacity: 1;
+    right: 0;
+  }
+  .product-image--add-to-cart {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.wrapper--add-cart {
+  background-color: styles.$color-neutral-grey-60;
+  color: styles.$color-neutral-white;
+  width: 100%;
 }
 
 .image_container {
@@ -54,3 +122,8 @@
 
 .card-wrapper {}
 .card-img {}
+
+.product-review--container {
+  display: flex;
+  gap: 8px;
+}

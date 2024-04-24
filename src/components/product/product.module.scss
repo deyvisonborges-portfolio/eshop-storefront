@@ -1,6 +1,6 @@
 @use "../../styles" as styles;
 
-.product-wrapper {
+.product {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -37,6 +37,10 @@
   position: absolute;
   transition: opacity 0.3s ease, bottom 0.3s ease;
   width: 100%;
+
+  & > span {
+    font-size: styles.$font-size-medium;
+  }
 }
 
 .product-image--action-group {
@@ -62,6 +66,11 @@
   justify-content: center;
   position: relative;
   width: 34px;
+
+  &:hover {
+    background-color: styles.$color-neutral-grey-20;
+    cursor: pointer;
+  }
 
   & > svg {
     position: absolute;

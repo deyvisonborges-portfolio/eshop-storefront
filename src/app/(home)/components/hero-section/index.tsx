@@ -15,7 +15,7 @@ export const HeroSection = () => {
       </div>
 
       <div className={styles["product-grid"]}>
-        <Product />
+        <Product actions={{ trash: true }} />
         <Product />
         <Product />
       </div>

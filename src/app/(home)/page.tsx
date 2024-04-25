@@ -1,17 +1,5 @@
-import { Header } from "@/components/Header";
-import { HeroSection } from "./components/hero-section";
-import { Button } from "@/components/Button";
-
-import styles from "./page.module.scss";
-import { Search } from "@/components/search";
+import { HomePage } from "@/pages/home/home";
 
 export default function Home() {
-  return (
-    <>
-      <Header />
-      <HeroSection />
-      <Search />
-      <pre className={styles.pre}>testando cor</pre>
-    </>
-  );
+  return <HomePage />;
 }

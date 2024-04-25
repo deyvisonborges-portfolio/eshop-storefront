@@ -1,0 +1,114 @@
+@use "../../../../styles/" as s;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: fit-content;
+  position: relative;
+  width: 100%;
+}
+
+.first-line {
+  align-items: end;
+  display: flex;
+  justify-content: baseline;
+}
+
+.first-line--box-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-right: 86px;
+
+  h3 {
+    font-size: 36px;
+  }
+}
+
+.first-line--box-hours {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.first-line--box-hours--item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.first-line--box-hours--item-day {
+  font-size: s.$font-size-medium;
+  font-weight: s.$font-weight-medium;
+}
+
+.first-line--box-hours--item-number {
+  font-size: 2rem;
+  font-weight: s.$font-weight-bold;
+}
+
+.semiclone {
+  align-self: end;
+  color: s.$color-brand-primary;
+  font-size: 2rem;
+  font-weight: s.$font-weight-bold;
+  margin-bottom: 3px;
+}
+
+.first-line--box-arrows {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  width: fit-content;
+}
+
+.first-line--box-arrows--icon {
+  align-items: center;
+  background-color: s.$color-neutral-grey-20;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  position: relative;
+  width: 34px;
+
+  & > svg {
+    position: absolute;
+  }
+}
+
+
+.mark {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  width: fit-content;
+}
+
+.mark--text {
+  color: s.$color-brand-primary;
+  font-size: s.$font-size-medium;
+  font-weight: s.$font-weight-bold;
+}
+
+.mark--box {
+  background-color: s.$color-brand-primary;
+  border-radius: 4px;
+  height: 40px;
+  width: 20px;
+}
+
+
+// TODO: mover para o componente chamado Scrollist
+// Que é responsável por trabalhar o scroll snap
+
+.temp-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}

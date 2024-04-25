@@ -7,8 +7,9 @@
 
   & > span {
     align-items: center;
-    background-color: vars.$color-semantic-informative-blue-10;
+    background-color: vars.$color-brand-primary;
     border-radius: 16px;
+    color: vars.$color-neutral-white;
     content: "";
     font-size: vars.$font-size-small;
     display: flex;

@@ -2,7 +2,9 @@
 
 $themes: (
   dark: (
-    "color-neutral-white": red,
+    "color-brand-primary": vars.$color-brand-primary,
+    "color-dark-black": vars.$color-dark-black,
+    "color-neutral-white": vars.$color-neutral-white,
     "color-neutral-grey-10": vars.$color-neutral-grey-10,
     "color-neutral-grey-20": vars.$color-neutral-grey-20,
     "color-neutral-grey-30": vars.$color-neutral-grey-30,
@@ -21,6 +23,8 @@ $themes: (
     "color-semantic-success-green-50": vars.$color-semantic-success-green-50,
   ),
   light: (
+    "color-brand-primary": vars.$color-brand-primary,
+    "color-dark-black": vars.$color-dark-black,
     "color-neutral-white": vars.$color-neutral-white,
     "color-neutral-grey-10": vars.$color-neutral-grey-10,
     "color-neutral-grey-20": vars.$color-neutral-grey-20,
@@ -40,8 +44,8 @@ $themes: (
     "color-semantic-success-green-50": vars.$color-semantic-success-green-50,
   ),
   fallback: (
-    "color-neutral-white": #FFFFFF
-  )
+    "color-neutral-white": #ffffff,
+  ),
 );
 
 @function get-theme() {
@@ -63,12 +67,12 @@ $themes: (
 @function theme-get($key) {
   $theme: get-theme();
   $theme-map: map-get($themes, $theme);
-  
+
   @if $theme-map {
     @return map-get($theme-map, $key);
   } @else {
     @warn "Tema não encontrado para '#{$theme}', usando cor de fallback.";
-    @return #CCCCCC;
+    @return #cccccc;
   }
 }
 

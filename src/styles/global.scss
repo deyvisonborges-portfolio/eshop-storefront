@@ -2,9 +2,9 @@
 @use "./theme";
 @use "./variables";
 
+@use "./reset";
 
 // @use "./theme";
-
 // Nao necessario no momento
 // :root {
 //   --color-neutral-white: $color-neutral-white;
@@ -28,7 +28,6 @@
 //   --font-weight-bold: 700;
 //   --font-weight-bolder: 900;
 // }
-
 // html,
 // body {
 //   @include theme() {
@@ -36,25 +35,31 @@
 //     background-color: theme-get("color-neutral-grey-10");
 //   }
 // }
-
 // a {
 //   @include theme() {
 //     color: theme-get("link-color");
 //   }
 // }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 

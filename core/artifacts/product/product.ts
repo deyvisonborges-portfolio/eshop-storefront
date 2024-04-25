@@ -1,4 +1,5 @@
 export interface Product {
+  id: string
   description: string; // Some product description
   reviews: number; // ex.: ***** 5,8
   price: number; // ex.: R$ 20

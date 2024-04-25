@@ -11,29 +11,25 @@
   position: sticky;
 }
 
-.action-group {
+.content-left {
   align-items: center;
   display: flex;
-  gap: 40px;
-  justify-content: center;
-  width: fit-content;
+  gap: 190px;
+  justify-content: space-between;
 }
 
-.action-group--auth {
+.content-right {
+  align-items: center;
   display: flex;
   gap: 24px;
-}
-
-.action-group--auth-item {
-  display: flex;
-  gap: 12px;
-
-  & > p {
-    font-size: vars.$font-size-medium;
-  }
+  justify-content: space-between;
 }
 
 .action-group--icons {
   display: flex;
-  gap: 24px;
+  gap: 16px;
+
+  :hover {
+    cursor: pointer;
+  }
 }

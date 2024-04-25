@@ -9,11 +9,24 @@ interface ProductProps {
   enableTrash?: boolean;
 }
 
+type ProductComponentModel = {
+  id: string;
+  description: string; // Some product description
+  reviews: number; // ex.: ***** 5,8
+  price: number; // ex.: R$ 20
+  priceWithDiscount: number; // ex.: R$ 20,00 / R$ 19,00
+  priceNote?: string; //  ex.: R$ 20 /per item
+  deliveryNote?: string; // ex.: <Icon> Free shipping
+  addressNote?: string; // ex.: <Icon> United States
+  categoryName?: string; // ELETRONICS
+  attributes?: [{ sizes?: string[]; colors?: string[] }];
+};
+
 export const Product = ({
   actions = {
-    favorite: false,
-    quickview: false,
-    trash: false,
+    favorite: true,
+    quickview: true,
+    trash: true,
   },
   enableTrash,
   ...props
@@ -23,11 +36,13 @@ export const Product = ({
       <div className={styles["product-image--container"]}>
         <img
           className={styles["product-image--content"]}
-          src="https://framerusercontent.com/images/r59ibP0ToXB3BqtNzkTUDO9ww.jpg"
+          src="/images/ak-900-wired-keyboard.png"
           alt=""
         />
 
-        <div className={styles["product-imxage--action-group"]}>
+        <span className={styles["product-image--tag"]}>NEW</span>
+
+        <div className={styles["product-image--action-group"]}>
           {actions.trash && (
             <div className={styles["product-image--action-group--icon"]}>
               <IconDeleteBlack24 />
@@ -50,9 +65,12 @@ export const Product = ({
         </div>
       </div>
 
-      <div className={styles.info_container}>
-        <h3>iWatch SE 3</h3>
-        <p>R$ 2990,89</p>
+      <div className={styles["product-info"]}>
+        <p className={styles["product-info--title"]}>iWatch SE 3</p>
+        <div className={styles["product-info--price--container"]}>
+          <span className={styles["product-info--price"]}>R$ 2990,89</span>
+          <span className={styles["product-info--discounted"]}>R$ 1990,90</span>
+        </div>
       </div>
     </div>
   );

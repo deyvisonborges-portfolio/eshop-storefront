@@ -1,0 +1,38 @@
+@use "../../styles/_theme" as _t;
+@use "../../styles" as _s;
+
+.container {
+  align-items: center;
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+
+  input {
+    border: none;
+    background-color: _t.theme-get("color-neutral-grey-10");
+    border-radius: 4px;
+    display: flex;
+    padding: 12px 24px;
+    padding-right: 44px;
+    width: 292px;
+
+    &:active {
+      outline: _t.theme-get("color-semantic-informative-blue-10");
+    }
+
+    &::placeholder {
+      color: _t.theme-get("color-neutral-grey-30");
+      font-family: 'Inter', sans-serif;
+      font-weight: _s.$font-weight-light;
+      width: 100%;
+    }
+  }
+
+  svg {
+    align-self: center;
+    cursor: pointer;
+    right: 16px;
+    position: absolute;
+  }
+}

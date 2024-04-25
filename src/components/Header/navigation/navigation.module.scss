@@ -1,0 +1,25 @@
+@use "../../../styles/" as s;
+
+.menu {
+  align-items: center;
+  display: flex;
+  gap: 48px;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.menu-item {
+  color: s.$color-dark-black;
+  font-size: s.$font-size-regular;
+  font-weight: s.$font-weight-regular;
+  list-style: none;
+
+  &:hover {
+    color: s.$color-brand-primary;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

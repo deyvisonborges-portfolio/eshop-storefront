@@ -1,5 +1,7 @@
 @use "../../styles" as styles;
+@use "../../styles/theme" as t;
 
+// Container
 .product {
   display: flex;
   flex-direction: column;
@@ -9,6 +11,7 @@
   width: 270px;
 }
 
+// Product Image
 .product-image--container {
   border-radius: 4px;
   background-color: styles.$color-neutral-grey-10;
@@ -25,24 +28,31 @@
   width: 100%;
 }
 
+// Product Image
+//// Product Image - Add To Cart
 .product-image--add-to-cart {
   align-items: center;
-  background-color: styles.$color-neutral-grey-60;
+  background-color: t.theme-get("color-dark-black");
   bottom: -10px;
   color: styles.$color-neutral-grey-10;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   opacity: 0;
   padding: 12px;
+  pointer-events: none;
   position: absolute;
-  transition: opacity 0.3s ease, bottom 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    bottom 0.3s ease;
   width: 100%;
-
   & > span {
     font-size: styles.$font-size-medium;
   }
 }
 
+// Product Image
+//// Action Group
 .product-image--action-group {
   display: flex;
   height: fit-content;
@@ -51,12 +61,19 @@
   justify-content: space-between;
   opacity: 0;
   padding: 12px;
+  // Sem essa parte do codigo, com o mouse em cima, temos um bug no estilo
+  pointer-events: none;
   position: absolute;
   right: -10px;
-  transition: opacity 0.3s ease, right 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    right 0.3s ease;
   top: 0;
 }
 
+// Product Image
+//// Action Group
+////// Icon
 .product-image--action-group--icon {
   align-items: center;
   background-color: styles.$color-neutral-white;
@@ -80,59 +97,59 @@
 .product-image--container:hover {
   .product-image--action-group {
     opacity: 1;
+    pointer-events: all;
     right: 0;
   }
   .product-image--add-to-cart {
     bottom: 0;
+    pointer-events: all;
     opacity: 1;
   }
 }
 
-.wrapper--add-cart {
-  background-color: styles.$color-neutral-grey-60;
-  color: styles.$color-neutral-white;
-  width: 100%;
-}
-
-.image_container {
-  border-radius: 24px;
-  position: relative;
-  
-  & > img {
-    border-radius: 24px;
-    image-rendering: auto;
-    object-fit: cover;
-    width: 100%;
-  }
-}
-
-.image_container--tag {
-  background-color: styles.$color-neutral-white;
-  border-radius: 24px;
-  padding: 12px 16px;
+// Product Image
+//// Tag
+.product-image--tag {
+  background-color: t.theme-get("color-semantic-success-green-50");
+  color: t.theme-get("color-semantic-success-green-10");
+  cursor: default;
+  border-radius: 4px;
+  font-size: styles.$font-size-small;
+  margin: 12px;
+  padding: 4px 12px;
   position: absolute;
-  top: 24px;
-  left: 24px;
-
-  & > span {
-    font-size: styles.$font-size-small;
-  }
+  top: 0;
+  left: 0;
 }
 
-.info_container {
+// Product Infos
+.product-info {
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-   & > h3 {
-    color: #212121;
-   }
 }
 
-.card-wrapper {}
-.card-img {}
+// TODO: refact to use Text component
+.product-info--title {
+  color: t.theme-get("color-dark-black");
+  font-size: styles.$font-size-regular;
+  font-weight: styles.$font-weight-medium;
+}
 
-.product-review--container {
+.product-info--price--container {
   display: flex;
-  gap: 8px;
+  gap: 12px;
+}
+
+.product-info--price {
+  color: t.theme-get("color-brand-primary");
+  font-size: styles.$font-size-regular;
+  font-weight: styles.$font-weight-medium;
+}
+
+.product-info--discounted {
+  color: t.theme-get("color-neutral-grey-30");
+  font-size: styles.$font-size-regular;
+  font-weight: styles.$font-weight-regular;
+  text-decoration: line-through;
 }

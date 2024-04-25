@@ -4,33 +4,32 @@ import { BagIcon } from "@/icons/BagIcon";
 import { FavoriteIcon } from "@/icons/FavoriteIcon";
 import { IdentityIcon } from "@/icons/IdentityIcon";
 import { RegisterIcon } from "@/icons/RegisterIcon";
+import { IconUserBlack32 } from "@/icons/user-black-32";
+import { Search } from "../search";
+import { HeaderNavigation } from "./navigation";
 
 export function Header() {
   return (
     <header className={styles.container}>
-      <Image
-        alt="Logo Black - eShop"
-        src="/svgs/logo-black.svg"
-        height={54}
-        width={154}
-      />
+      <div className={styles["content-left"]}>
+        <Image
+          alt="Logo Black - eShop"
+          src="/svgs/logo-black.svg"
+          height={44}
+          width={124}
+        />
 
-      <div className={styles['action-group']}>
-        <div className={styles['action-group--auth']}>
-          <div className={styles['action-group--auth-item']}>
-            <IdentityIcon />
-            <p>Faça login</p>
+        <HeaderNavigation />
+      </div>
+
+      <div className={styles["content-right"]}>
+        <Search />
+        <div className={styles["action-group"]}>
+          <div className={styles["action-group--icons"]}>
+            <FavoriteIcon />
+            <BagIcon />
+            <IconUserBlack32 />
           </div>
-
-          <div className={styles['action-group--auth-item']}>
-            <RegisterIcon />
-            <p>Cadastre-se</p>
-          </div>
-        </div>
-
-        <div className={styles['action-group--icons']}>
-          <FavoriteIcon />
-          <BagIcon />
         </div>
       </div>
     </header>

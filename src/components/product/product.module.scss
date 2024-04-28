@@ -47,7 +47,7 @@
     bottom 0.3s ease;
   width: 100%;
   & > span {
-    font-size: styles.$font-size-medium;
+    font-size: styles.$font-size-body-medium;
   }
 }
 
@@ -114,7 +114,7 @@
   color: t.theme-get("color-semantic-success-green-10");
   cursor: default;
   border-radius: 4px;
-  font-size: styles.$font-size-small;
+  font-size: styles.$font-size-body-medium;
   margin: 12px;
   padding: 4px 12px;
   position: absolute;
@@ -132,7 +132,7 @@
 // TODO: refact to use Text component
 .product-info--title {
   color: t.theme-get("color-dark-black");
-  font-size: styles.$font-size-regular;
+  font-size: styles.$font-size-body-regular;
   font-weight: styles.$font-weight-medium;
 }
 
@@ -143,13 +143,13 @@
 
 .product-info--price {
   color: t.theme-get("color-brand-primary");
-  font-size: styles.$font-size-regular;
+  font-size: styles.$font-size-body-regular;
   font-weight: styles.$font-weight-medium;
 }
 
 .product-info--discounted {
   color: t.theme-get("color-neutral-grey-30");
-  font-size: styles.$font-size-regular;
+  font-size: styles.$font-size-body-regular;
   font-weight: styles.$font-weight-regular;
   text-decoration: line-through;
 }

@@ -1,4 +1,4 @@
-@use "../../styles/" as vars;
+@use "../../styles/" as s;
 
 .text__style--normal {
   font-style: normal;
@@ -13,8 +13,8 @@
 }
 
 @mixin bodyLargeRegular {
-  font-size: vars.$font-size-large;
-  font-weight: vars.$font-weight-bold;
+  font-size: s.$font-size-large;
+  font-weight: s.$font-weight-bold;
 }
 
 .body-large-regular {

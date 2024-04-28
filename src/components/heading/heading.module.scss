@@ -1,0 +1,31 @@
+@use "../../styles" as s;
+
+/*
+* Formatting
+* Normal - Link - Uppercase
+*/
+.heading-formatting--normal {
+  font-style: normal;
+}
+
+.heading-formatting--link {
+  text-decoration: underline;
+}
+
+.heading-formatting--upper {
+  text-transform: uppercase;
+}
+
+@mixin bodyLargeRegular {
+  font-size: vars.$font-size-large;
+  font-weight: vars.$font-weight-bold;
+}
+
+/*
+* Tokens
+* Type - Size - Weight
+*/
+.heading-small-medium {
+  font-size: s.$font-size-heading-small;
+  font-weight: s.$font-weight-medium;
+}

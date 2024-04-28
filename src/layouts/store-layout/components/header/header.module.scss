@@ -1,13 +1,15 @@
 @use "../../../../styles" as vars;
+@use "../../../../styles/theme" as t;
 
 .container {
   align-items: center;
+  border-bottom: 1px solid t.theme-get("color-neutral-grey-20");
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   height: min-content;
   justify-content: space-between;
-  padding: 40px 96px;
+  padding: 40px 96px 16px;
   position: sticky;
 }
 

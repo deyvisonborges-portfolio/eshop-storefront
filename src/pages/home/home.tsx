@@ -3,7 +3,6 @@ import { FlashSalesSection } from "./components/flash-sales-section";
 
 import styles from "./home.module.scss";
 import { StoreLayout } from "@/layouts/store-layout";
-import { Heading } from "@/components/heading";
 
 export function HomePage() {
   return (
@@ -11,7 +10,6 @@ export function HomePage() {
       <div className={styles.wrapper}>
         <HeroSection />
         <FlashSalesSection />
-        <Heading token="h5">meu pinto</Heading>
       </div>
     </StoreLayout>
   );

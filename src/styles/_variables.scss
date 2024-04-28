@@ -1,4 +1,4 @@
-$color-brand-primary: #DB4444;
+$color-brand-primary: #db4444;
 $color-dark-black: #212121;
 $color-neutral-white: #ffffff;
 $color-neutral-grey-10: #f1f1f1;
@@ -15,7 +15,7 @@ $color-semantic-danger-red-10: #ffe9e0;
 $color-semantic-danger-red-50: #ff6872;
 $color-semantic-success-green-10: #f2fccf;
 $color-semantic-success-green-50: #8ac916;
-$color-other-aquamarine-50: #CBE4E8;
+$color-other-aquamarine-50: #cbe4e8;
 // MINI - SMALL - MEDIUM - REGULAR - LARGE
 $font-size-heading-display: 96px;
 $font-size-heading-large: 72px;
@@ -35,3 +35,12 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-weight-bolder: 900;
 
+@mixin bodyRegularRegular {
+  font-size: $font-size-body-regular;
+  font-weight: $font-weight-regular;
+}
+
+@mixin bodyLargeRegular {
+  font-size: $font-size-body-large;
+  font-weight: $font-weight-bold;
+}

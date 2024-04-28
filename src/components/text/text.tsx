@@ -6,7 +6,7 @@ type Weight = "regular" | "medium" | "bold";
 type Style = "normal" | "link" | "upper";
 
 type TextProps = {
-  token: "body-large-regular";
+  token: "body-large-regular" | "body-regular-regular";
   style?: Style;
   type?: "span" | "p";
   classNames?: string[];
@@ -16,24 +16,19 @@ type TextProps = {
 export const Text = forwardRef<
   HTMLAttributes<HTMLParagraphElement | HTMLSpanElement>,
   TextProps
->(
-  (
-    { token, style = "normal", children, type = "p", classNames = [] },
-    ref
-  ) => {
-    const textToken = stylesTokens[`${token}`];
-    const textStyle = stylesTokens[`text__style--${style}`];
-    const TextType = type || "p";
+>(({ token, style = "normal", children, type = "p", classNames = [] }, ref) => {
+  const textToken = stylesTokens[`${token}`];
+  const textStyle = stylesTokens[`text__style--${style}`];
+  const TextType = type || "p";
 
-    return createElement(
-      TextType,
-      {
-        ref,
-        className: `${textToken} ${textStyle}`,
-      },
-      children
-    );
-  }
-);
+  return createElement(
+    TextType,
+    {
+      ref,
+      className: `${textToken} ${textStyle}`,
+    },
+    children
+  );
+});
 
 Text.displayName = "Text";

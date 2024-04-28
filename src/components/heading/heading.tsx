@@ -4,7 +4,7 @@ import styles from "./heading.module.scss";
 type Formatting = "normal" | "link" | "upper";
 
 type HeadingTokens = {
-  h5: "heading-small-medium";
+  "heading-small-medium": "h5";
 };
 
 type HeadingProps = {
@@ -19,15 +19,15 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     { token, formatting = "normal", children, classNames = [], ...rest },
     ref
   ) => {
-    const tokens = {
-      h5: "heading-small-medium",
-    } as HeadingTokens;
+    const tokens: HeadingTokens = {
+      "heading-small-medium": "h5",
+    };
 
-    const textToken = styles[tokens[token]];
+    const textToken = styles[token];
     const textFormatting = styles[`heading-formatting--${formatting}`];
 
     return createElement(
-      token,
+      tokens[token],
       {
         ref,
         className: `${textToken} ${textFormatting} ${classNames.join(" ")}`,

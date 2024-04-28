@@ -1,0 +1,92 @@
+@use "../../styles" as s;
+@use "../../styles/theme" as t;
+
+.container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+
+  @include s.screen-min("sm") {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.content-left {
+  display: none;
+
+  @include s.screen-min("sm") {
+    background-color: t.theme-get("color-other-aquamarine-50");
+    background-image: url("/images/banner-login.png");
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.content-right {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 40px 24px;
+  width: 100%;
+
+  @include s.screen-min("sm") {
+    padding: 148px 126px 0;
+    min-width: 370px;
+  }
+}
+
+.description-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid t.theme-get("color-neutral-grey-20");
+  font-family: "Inter", sans-serif;
+  outline: none;
+  padding-bottom: 8px;
+  width: 100%;
+
+  &::placeholder {
+    font-family: "Inter", sans-serif;
+    @include s.bodyRegularRegular();
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.button-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  & > button {
+    width: 100%;
+  }
+  @include s.screen-min("sm") {
+    justify-content: space-between;
+
+    & > button {
+      width: fit-content;
+    }
+  }
+}

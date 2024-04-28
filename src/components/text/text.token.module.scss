@@ -12,11 +12,10 @@
   text-transform: uppercase;
 }
 
-@mixin bodyLargeRegular {
-  font-size: s.$font-size-large;
-  font-weight: s.$font-weight-bold;
+.body-large-regular {
+  @include s.bodyLargeRegular
 }
 
-.body-large-regular {
-  @include bodyLargeRegular();
+.body-regular-regular {
+  @include s.bodyRegularRegular;
 }

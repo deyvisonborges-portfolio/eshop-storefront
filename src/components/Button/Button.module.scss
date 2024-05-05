@@ -40,10 +40,13 @@
 }
 
 /****** Variants ******/
-.button__primary {
+.button--primary {
+  
 }
-.button__secondary {
+.button--secondary {
+
 }
+
 .button__ghost {
   background: none;
   color: t.theme-get("color-brand-primary");

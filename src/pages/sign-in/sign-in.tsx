@@ -1,9 +1,12 @@
+"use client";
+
 import { Heading } from "@/components/heading";
 import { StoreLayout } from "@/layouts/store-layout";
 
 import styles from "./sign-in.module.scss";
 import { Text } from "@/components/text";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/button";
+import { FormEvent, FormEventHandler } from "react";
 
 export function SignInPage() {
   return (
@@ -17,14 +20,22 @@ export function SignInPage() {
             <Text token="body-regular-regular">Insira seus dados abaixo</Text>
           </div>
 
-          <form action="#" className={styles.form}>
+          <form
+            className={styles.form}
+            onSubmit={(e: FormEvent<HTMLFormElement>) => {
+              e.preventDefault();
+              // console.log(e.target?.email.value);
+            }}
+          >
             <div className={styles["input-group"]}>
               <input
+                id="email"
                 className={styles.input}
                 type="email"
                 placeholder="E-mail ou telefone"
               />
               <input
+                id="password"
                 className={styles.input}
                 type="password"
                 placeholder="Senha"
@@ -32,7 +43,7 @@ export function SignInPage() {
             </div>
 
             <div className={styles["button-group"]}>
-              <Button type="button">Entrar</Button>
+              <Button type="submit">Entrar</Button>
               <Button type="button" variant="ghost">
                 Esqueci a senha
               </Button>

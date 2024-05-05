@@ -2,8 +2,6 @@ import styles from "./header.module.scss";
 import Image from "next/image";
 import { BagIcon } from "@/icons/BagIcon";
 import { FavoriteIcon } from "@/icons/FavoriteIcon";
-import { IdentityIcon } from "@/icons/IdentityIcon";
-import { RegisterIcon } from "@/icons/RegisterIcon";
 import { IconUserBlack32 } from "@/icons/user-black-32";
 import { Search } from "../search";
 import { HeaderNavigation } from "./navigation";

@@ -51,18 +51,20 @@
   width: 100%;
 }
 
-.input {
+.input {  
   background: none;
   border: none;
   border-bottom: 1px solid t.theme-get("color-neutral-grey-20");
-  font-family: "Inter", sans-serif;
+  color: t.theme-get("color-neutral-grey-50");
   outline: none;
   padding-bottom: 8px;
   width: 100%;
 
+  @include s.bodyRegularRegular();
+
   &::placeholder {
+    color: t.theme-get("color-neutral-grey-20");
     font-family: "Inter", sans-serif;
-    @include s.bodyRegularRegular();
   }
 }
 

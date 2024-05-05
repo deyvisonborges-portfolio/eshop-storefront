@@ -17,3 +17,17 @@ https://sabinovision.com/
 https://demo.evershop.io/admin/orders
 demo@evershop.io
 123456
+
+
+
+# Novas referencias
+https://www.untitledui.com/components/buttons
+https://dribbble.com/shots/7958069-UI-Components-Buttons-Core-Design-System#
+https://tailwindui.com/components/application-ui/elements/buttons
+https://ui.shadcn.com/blocks
+https://ui.shadcn.com/docs/components/resizable
+https://www.figma.com/file/gkFlrAZH7P05JnOGh0J0c3/Shopping-Ecommerce-Website-UI-Kit---UI8-(Community)?type=design&node-id=113-7674&mode=design&t=QY6ktqLdFpJzFA6f-0
+https://www.figma.com/file/fIuZJrv61nej4k0kydp1bE/Minimal-E-Commerce-App---Design-System-(Community)?type=design&node-id=61-215&mode=design&t=BiWWPmd5X6XGdL59-0
+
+### Referencia principal
+https://www.figma.com/file/Mm4HiMIeqRsAXPiKDxv1o5/Figma-E-Commerce-System-1.0?type=design&node-id=1-264&mode=design&t=JCfIZoRLkzj0R302-0

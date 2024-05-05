@@ -1,49 +1,12 @@
-@use "./mixings";
+@use "./breakpoints";
 @use "./theme";
 @use "./variables";
-
 @use "./reset";
 
-// @use "./theme";
-// Nao necessario no momento
-// :root {
-//   --color-neutral-white: $color-neutral-white;
-//   --color-neutral-grey-10: $color-neutral-grey-10;
-//   --color-neutral-grey-20: $color-neutral-grey-20;
-//   --color-neutral-grey-30: $color-neutral-grey-30;
-//   --color-neutral-grey-40: $color-neutral-grey-40;
-//   --color-neutral-grey-50: $color-neutral-grey-50;
-//   --color-neutral-grey-60: $color-neutral-grey-60;
-//   --color-semantic-informative-blue-10: $color-semantic-informative-blue-10;
-//   --color-semantic-informative-blue-50: $color-semantic-informative-blue-50;
-//   --color-semantic-warning-yellow-10: $color-semantic-warning-yellow-10;
-//   --color-semantic-warning-yellow-50: $color-semantic-warning-yellow-50;
-//   --color-semantic-danger-red-10: $color-semantic-danger-red-10;
-//   --color-semantic-danger-red-50: $color-semantic-danger-red-50;
-//   --color-semantic-success-green-10: $color-semantic-success-green-10;
-//   --color-semantic-success-green-50: $color-semantic-success-green-50;
-//   --font-weight-lighter: 100;
-//   --font-weight-light: 200;
-//   --font-weight-normal: 400;
-//   --font-weight-bold: 700;
-//   --font-weight-bolder: 900;
-// }
-// html,
-// body {
-//   @include theme() {
-//     color: theme-get("color-neutral-gray-10");
-//     background-color: theme-get("color-neutral-grey-10");
-//   }
-// }
-// a {
-//   @include theme() {
-//     color: theme-get("link-color");
-//   }
-// }
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 h1,
@@ -54,8 +17,8 @@ h5,
 h6,
 p,
 span {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html,

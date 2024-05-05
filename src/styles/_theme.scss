@@ -1,8 +1,17 @@
-@use "./variables" as vars;
+@use "./_variables" as vars;
 
 $themes: (
   dark: (
-    "color-brand-primary": vars.$color-brand-primary,
+    "border-color-lighter": vars.$color-neutral-grey-20,
+    "border-color-light": vars.$color-neutral-grey-30,
+    "border-color": vars.$color-neutral-grey-50,
+    "border-color-dark": vars.$color-neutral-grey-50,
+    "border-color-darker": vars.$color-neutral-grey-60,
+
+    "color-brand-blue": vars.$color-brand-blue,
+    "color-brand-green": vars.$color-brand-green,
+    "color-brand-orange": vars.$color-brand-orange,
+    "color-brand-purple": vars.$color-brand-purple,
     "color-dark-black": vars.$color-dark-black,
     "color-neutral-white": vars.$color-neutral-white,
     "color-neutral-grey-10": vars.$color-neutral-grey-10,
@@ -11,11 +20,8 @@ $themes: (
     "color-neutral-grey-40": vars.$color-neutral-grey-40,
     "color-neutral-grey-50": vars.$color-neutral-grey-50,
     "color-neutral-grey-60": vars.$color-neutral-grey-60,
-    "color-other-aquamarine-50": vars.$color-other-aquamarine-50,
-    "color-semantic-informative-blue-10":
-      vars.$color-semantic-informative-blue-10,
-    "color-semantic-informative-blue-50":
-      vars.$color-semantic-informative-blue-50,
+    "color-semantic-informative-blue-10": vars.$color-semantic-informative-blue-10,
+    "color-semantic-informative-blue-50": vars.$color-semantic-informative-blue-50,
     "color-semantic-warning-yellow-10": vars.$color-semantic-warning-yellow-10,
     "color-semantic-warning-yellow-50": vars.$color-semantic-warning-yellow-50,
     "color-semantic-danger-red-10": vars.$color-semantic-danger-red-10,
@@ -24,7 +30,16 @@ $themes: (
     "color-semantic-success-green-50": vars.$color-semantic-success-green-50,
   ),
   light: (
-    "color-brand-primary": vars.$color-brand-primary,
+    "border-color-lighter": vars.$color-neutral-grey-20,
+    "border-color-light": vars.$color-neutral-grey-30,
+    "border-color": vars.$color-neutral-grey-50,
+    "border-color-dark": vars.$color-neutral-grey-50,
+    "border-color-darker": vars.$color-neutral-grey-60,
+
+    "color-brand-blue": vars.$color-brand-blue,
+    "color-brand-green": vars.$color-brand-green,
+    "color-brand-orange": vars.$color-brand-orange,
+    "color-brand-purple": vars.$color-brand-purple,
     "color-dark-black": vars.$color-dark-black,
     "color-neutral-white": vars.$color-neutral-white,
     "color-neutral-grey-10": vars.$color-neutral-grey-10,
@@ -33,11 +48,8 @@ $themes: (
     "color-neutral-grey-40": vars.$color-neutral-grey-40,
     "color-neutral-grey-50": vars.$color-neutral-grey-50,
     "color-neutral-grey-60": vars.$color-neutral-grey-60,
-    "color-other-aquamarine-50": vars.$color-other-aquamarine-50,
-    "color-semantic-informative-blue-10":
-      vars.$color-semantic-informative-blue-10,
-    "color-semantic-informative-blue-50":
-      vars.$color-semantic-informative-blue-50,
+    "color-semantic-informative-blue-10": vars.$color-semantic-informative-blue-10,
+    "color-semantic-informative-blue-50": vars.$color-semantic-informative-blue-50,
     "color-semantic-warning-yellow-10": vars.$color-semantic-warning-yellow-10,
     "color-semantic-warning-yellow-50": vars.$color-semantic-warning-yellow-50,
     "color-semantic-danger-red-10": vars.$color-semantic-danger-red-10,
@@ -80,6 +92,10 @@ $themes: (
 
 @mixin dark-mode {
   @media (prefers-color-scheme: dark) {
+    @content;
+  }
+
+  :global(.dark) {
     @content;
   }
 }

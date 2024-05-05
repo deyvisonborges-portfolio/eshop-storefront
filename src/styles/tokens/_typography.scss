@@ -1,0 +1,11 @@
+@use "../variables" as vars;
+
+@mixin bodyLargeRegular {
+  font-size: vars.$font-size-body-large;
+  font-weight: vars.$font-weight-bold;
+}
+
+@mixin bodyRegularRegular {
+  font-size: vars.$font-size-body-regular;
+  font-weight: vars.$font-weight-regular;
+}

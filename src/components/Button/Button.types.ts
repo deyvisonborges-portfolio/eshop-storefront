@@ -5,8 +5,7 @@ export type ButtonColorType =
   | "secondary"
   | "warning"
   | "success"
-  | "warning"
   | "error"
   | "info";
 
-export type ButtonVariantSize = "small" | "default" | "large";
+export type ButtonVariantSize = "small" | "regular" | "large";

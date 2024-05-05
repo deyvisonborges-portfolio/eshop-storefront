@@ -3,9 +3,10 @@ import {
   ButtonColorType,
   ButtonVariantSize,
   ButtonVariantType,
-} from "./Button.types";
+} from "./button.types";
 
-import styles from "./Button.module.scss";
+import styles from "./button.module.scss";
+import classNames from "classnames";
 
 interface ButtonProps extends ComponentPropsWithRef<"button"> {
   variant?: ButtonVariantType;
@@ -14,13 +15,21 @@ interface ButtonProps extends ComponentPropsWithRef<"button"> {
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (props, ref) => (
+  (
+    { variant = "default", color = "primary", size = "regular", children },
+    ref
+  ) => (
     <button
       ref={ref}
       name="button"
-      className={`${styles[`button__${props.variant}`]} ${styles.button__primary} ${styles.button} `}
+      className={classNames(
+        styles[`button--${variant}`],
+        styles[`button--${color}`],
+        styles[`button--${size}`],
+        styles.button
+      )}
     >
-      {props.children}
+      {children}
     </button>
   )
 );

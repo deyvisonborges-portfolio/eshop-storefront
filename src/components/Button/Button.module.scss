@@ -2,9 +2,7 @@
 @use "../../styles" as s;
 
 .button {
-  background-color: t.theme-get("color-brand-primary");
   border: 0;
-  color: t.theme-get("color-neutral-white");
   cursor: pointer;
   outline: none;
   padding: 16px 48px;
@@ -41,13 +39,60 @@
 
 /****** Variants ******/
 .button--primary {
-  
+  background-color: t.theme-get("color-dark-black");
+  color: t.theme-get("color-neutral-white");
 }
+
 .button--secondary {
+  border: 1px solid t.theme-get("border-color-lighter");
+  color: t.theme-get("color-dark-black");
 
+  @include s.dark-mode {
+    color: t.theme-get("color-dark-black-40");
+  }
 }
 
-.button__ghost {
+.button--ghost {
   background: none;
-  color: t.theme-get("color-brand-primary");
+  color: t.theme-get("color-dark-black");
 }
+
+// Size
+.button--small {
+  font-size: 14px; // TODO: convert to rem in _variables.scss
+  min-height: s.$space-40;
+  padding: s.$space-8 s.$space-16;
+}
+
+.button--regular {
+  font-size: s.$font-size-16;
+  min-height: s.$space-48;
+  padding: s.$space-8 s.$space-16;
+}
+
+.button--medium {
+  font-size: s.$font-size-18;
+  padding: s.$space-12 s.$space-16;
+}
+
+.button--large {
+  font-size: s.$font-size-20;
+  padding: s.$space-24 s.$space-16;
+}
+
+// State Enabled
+// State Disabled
+// State Focused
+// State Pressed
+
+// Type (Variant) Default
+// Type (Variant) Ghost
+// Type (Variant) Text
+// Type (Variant) Link
+
+// Color Type Primary
+// Color Type Secondary
+// Color Type Warning
+// Color Type Success
+// Color Type Error
+// Color Type Info

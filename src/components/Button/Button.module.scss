@@ -2,48 +2,36 @@
 @use "../../styles" as s;
 
 .button {
+  align-items: center;
   border: 0;
   cursor: pointer;
+  display: flex;
+  font-weight: s.$font-weight-medium;
+  gap: s.$space-12;
+  justify-content: center;
   outline: none;
-  padding: 16px 48px;
-  -webkit-user-select: none;
+  text-align: center;
   user-select: none;
-
-  /****** States ******/
-  /* Active (when a mouse or keyboard is pressing) */
-  &:active {
-    outline: solid 2px blue;
-    outline-offset: 2px;
-  }
-
-  /* Focus */
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  &:focus-visible {
-    text-decoration: underline;
-    outline: solid 2px blue;
-    outline-offset: 2px;
-  }
+  appearance: initial;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
 
   /* Disabled */
   &:disabled,
   &[disabled] {
-    background-color: var(--color-neutral-400);
-    border-color: transparent;
-    color: #000;
-    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.8;
   }
 }
 
-/****** Variants ******/
 .button--primary {
   background-color: t.theme-get("color-dark-black");
   color: t.theme-get("color-neutral-white");
 }
 
 .button--secondary {
+  background-color: t.theme-get("color-neutral-white");
   border: 1px solid t.theme-get("border-color-lighter");
   color: t.theme-get("color-dark-black");
 
@@ -55,44 +43,42 @@
 .button--ghost {
   background: none;
   color: t.theme-get("color-dark-black");
+
+  &:hover:not(:disabled) {
+    background-color: t.theme-get("color-neutral-grey-20");
+  }
 }
 
-// Size
 .button--small {
-  font-size: 14px; // TODO: convert to rem in _variables.scss
+  border-radius: s.$border-radius-medium;
+  font-size: 14px;
+  height: fit-content;
   min-height: s.$space-40;
+  min-width: 7rem;
   padding: s.$space-8 s.$space-16;
+  width: fit-content;
 }
 
 .button--regular {
+  border-radius: s.$border-radius-medium;
   font-size: s.$font-size-16;
+  height: fit-content;
   min-height: s.$space-48;
+  min-width: 8rem;
   padding: s.$space-8 s.$space-16;
+  width: fit-content;
 }
 
 .button--medium {
+  border-radius: s.$border-radius-medium;
   font-size: s.$font-size-18;
+  height: fit-content;
+  min-height: s.$space-56;
+  min-width: 8rem;
   padding: s.$space-12 s.$space-16;
+  width: fit-content;
 }
 
-.button--large {
-  font-size: s.$font-size-20;
-  padding: s.$space-24 s.$space-16;
+.button--full-width {
+  width: 100%;
 }
-
-// State Enabled
-// State Disabled
-// State Focused
-// State Pressed
-
-// Type (Variant) Default
-// Type (Variant) Ghost
-// Type (Variant) Text
-// Type (Variant) Link
-
-// Color Type Primary
-// Color Type Secondary
-// Color Type Warning
-// Color Type Success
-// Color Type Error
-// Color Type Info

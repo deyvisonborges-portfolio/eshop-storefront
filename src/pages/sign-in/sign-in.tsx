@@ -11,46 +11,32 @@ import { FormEvent, FormEventHandler } from "react";
 export function SignInPage() {
   return (
     <StoreLayout>
-      <section className={styles.container}>
-        <article className={styles["content-left"]}></article>
-        <article className={styles["content-right"]}>
-          {/* TODO: Convert do GroupComponent */}
-          <div className={styles["description-group"]}>
-            <Heading token="heading-small-medium">Crie sua conta</Heading>
-            <Text token="body-regular-regular">Insira seus dados abaixo</Text>
-          </div>
-
-          <form
-            className={styles.form}
-            onSubmit={(e: FormEvent<HTMLFormElement>) => {
-              e.preventDefault();
-              // console.log(e.target?.email.value);
-            }}
-          >
-            <div className={styles["input-group"]}>
-              <input
-                id="email"
-                className={styles.input}
-                type="email"
-                placeholder="E-mail ou telefone"
-              />
-              <input
-                id="password"
-                className={styles.input}
-                type="password"
-                placeholder="Senha"
-              />
-            </div>
-
-            <div className={styles["button-group"]}>
-              <Button type="submit">Entrar</Button>
-              <Button type="button" variant="ghost">
-                Esqueci a senha
-              </Button>
-            </div>
-          </form>
-        </article>
-      </section>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "24px",
+        }}
+      >
+        <Button size="small" type="button">
+          Entrar
+        </Button>
+        <Button size="regular" type="button">
+          Disabled
+        </Button>
+        <Button size="medium" type="button" isFull>
+          Disabled
+        </Button>
+        <Button size="small" type="button" enableSpinner>
+          Carregando
+        </Button>
+        <Button size="regular" type="button" enableSpinner>
+          Carregando
+        </Button>
+        <Button size="medium" type="button" enableSpinner>
+          Carregando
+        </Button>
+      </div>
     </StoreLayout>
   );
 }

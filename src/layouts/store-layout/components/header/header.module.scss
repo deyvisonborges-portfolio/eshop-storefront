@@ -1,4 +1,4 @@
-@use "../../../../styles" as vars;
+@use "../../../../styles" as s;
 @use "../../../../styles/theme" as t;
 
 .container {
@@ -9,14 +9,18 @@
   flex-wrap: nowrap;
   height: min-content;
   justify-content: space-between;
-  padding: 40px 96px 16px;
+  padding: s.$space-16;
   position: sticky;
+
+  @include s.screen-min("sm") {
+    padding: s.$space-18 s.$space-32;
+  }
 }
 
 .content-left {
   align-items: center;
   display: flex;
-  gap: 190px;
+  gap: s.$space-48;
   justify-content: space-between;
 }
 
@@ -33,5 +37,29 @@
 
   :hover {
     cursor: pointer;
+  }
+}
+
+.category-button {
+  align-items: center;
+  background-color: t.theme-get("color-dark-black");
+  cursor: pointer;
+  border-radius: s.$border-radius-medium;
+  display: flex;
+  gap: s.$space-12;
+  justify-content: center;
+  padding: s.$space-12 s.$space-14;
+  user-select: none;
+
+  & > p {
+    color: t.theme-get("color-neutral-white");
+  }
+}
+
+.logo {
+  width: 84px;
+
+  @include s.screen-min("sm") {
+    width: 124px;
   }
 }

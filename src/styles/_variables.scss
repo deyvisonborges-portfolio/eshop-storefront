@@ -73,7 +73,8 @@ $line-height-large: calc($line-height-base-unit) * 1.5;
 
 $space-base-unit: $base-unit;
 $space-8: calc($space-base-unit) * 2;
-$space-12: calc($font-base-unit) * 3;
+$space-12: 12px;
+$space-14: 14px;
 $space-16: calc($space-base-unit) * 4;
 $space-18: 1.125rem;
 $space-24: calc($space-base-unit) * 6;

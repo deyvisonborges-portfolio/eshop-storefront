@@ -7,6 +7,7 @@ import styles from "./sign-in.module.scss";
 import { Text } from "@/components/text";
 import { Button } from "@/components/button";
 import { FormEvent, FormEventHandler } from "react";
+import { Input } from "@/components/input/input";
 
 export function SignInPage() {
   return (
@@ -18,6 +19,7 @@ export function SignInPage() {
           gap: "24px",
         }}
       >
+        <Input name="nome" placeholder="Informe o seu nome" />
         <Button size="small" type="button">
           Entrar
         </Button>

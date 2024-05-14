@@ -1,0 +1,44 @@
+@use "../../styles/" as s;
+@use "../../styles/theme" as t;
+
+.container {
+  display: contents;
+  position: relative;
+  width: fit-content;
+}
+
+@mixin input {
+  color: t.theme-get("color-dark-black");
+  border: 1px solid t.theme-get("color-neutral-grey-20");
+  border-radius: s.$border-radius-medium;
+  outline: none;
+  padding: 1rem;
+  width: fit-content;
+
+  &:disabled {
+    background-color: t.theme-get("color-neutral-white");
+    cursor: not-allowed;
+    filter: brightness(0.95);
+    opacity: 0.7;
+    user-select: none;
+  }
+
+  &:required:focus:invalid {
+    border: 1px solid t.theme-get("color-semantic-danger-red-50");
+  }
+
+  &:required:focus:valid {
+    border: 1px solid t.theme-get("color-semantic-success-green-50");
+  }
+
+  &::placeholder {
+    color: t.theme-get("color-neutral-grey-40");
+    font-family: "Inter", sans-serif;
+    font-size: s.$font-size-14;
+    font-weight: s.$font-weight-regular;
+  }
+}
+
+.input {
+  @include input;
+}

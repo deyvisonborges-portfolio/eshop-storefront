@@ -71,7 +71,7 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: s.$space-32;
 }
 
 .button-group {
@@ -91,4 +91,25 @@
       width: fit-content;
     }
   }
+}
+
+.box-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+  @include s.screen-min("sm") {
+    margin-top: s.$space-64;
+  }
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  gap: s.$space-32;
+  justify-content: flex-start;
+  max-width: 532px;
+  padding: s.$space-40 s.$space-32;
+  width: 100%;
 }

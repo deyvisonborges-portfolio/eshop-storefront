@@ -1,44 +1,38 @@
-"use client";
-
 import { Heading } from "@/components/heading";
 import { StoreLayout } from "@/layouts/store-layout";
 
 import styles from "./sign-in.module.scss";
-import { Text } from "@/components/text";
-import { Button } from "@/components/button";
-import { FormEvent, FormEventHandler } from "react";
 import { Input } from "@/components/input/input";
+import { Button } from "@/components/button";
+import { InputCheckbox } from "@/components/input-checkbox";
 
 export function SignInPage() {
   return (
     <StoreLayout>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "24px",
-        }}
-      >
-        <Input name="nome" placeholder="Informe o seu nome" />
-        <Button size="small" type="button">
-          Entrar
-        </Button>
-        <Button size="regular" type="button">
-          Disabled
-        </Button>
-        <Button size="medium" type="button" isFull>
-          Disabled
-        </Button>
-        <Button size="small" type="button" enableSpinner>
-          Carregando
-        </Button>
-        <Button size="regular" type="button" enableSpinner>
-          Carregando
-        </Button>
-        <Button size="medium" type="button" enableSpinner>
-          Carregando
-        </Button>
-      </div>
+      <section className={styles["box-container"]}>
+        <div className={styles["box-content"]}>
+          <Heading token="heading-small-medium">Login</Heading>
+          <div className={styles["input-group"]}>
+            <Input
+              label="E-mail"
+              name="input"
+              type="email"
+              placeholder="Enter you e-mail here"
+              required
+            />
+
+            <Input
+              label="Password"
+              name="password"
+              type="password"
+              placeholder="******"
+            />
+
+            <InputCheckbox disabled={true} label="Manter-me conectado" checkboxSize="small" />
+          </div>
+          <Button isFull>Log In</Button>
+        </div>
+      </section>
     </StoreLayout>
   );
 }

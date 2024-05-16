@@ -3,9 +3,9 @@ import { ComponentPropsWithRef, forwardRef, ReactNode, useMemo } from "react";
 import styles from "./input.module.scss";
 import classNames from "classnames";
 
-type InputTypeProps = "text" | "password" | "email";
+type InputTypeProps = "text" | "currency" | "number" | "password" | "email";
 
-interface InputProps extends ComponentPropsWithRef<"input"> {
+export interface InputProps extends ComponentPropsWithRef<"input"> {
   name: string;
   label?: string;
   message?: string;
@@ -15,6 +15,8 @@ interface InputProps extends ComponentPropsWithRef<"input"> {
 
 const renderPlaceholderTypeText: Record<InputTypeProps, string> = {
   text: "Digite aqui",
+  currency: "R$0,00",
+  number: "0",
   password: "Senha",
   email: "Digite aqui seu e-mail",
 } as const;
@@ -24,6 +26,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     { name, message, label, variant = "default", type = "text", ...props },
     ref
   ) => {
+    const renderType = useMemo(() => {
+      if (["text", "currency"].includes(type)) return "text";
+      else if (type === "password") return "passord";
+      else if (type === "email") return "email";
+      else return "number";
+    }, [type]);
+
     return (
       <div className={styles.container}>
         {label && (
@@ -36,7 +45,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={name}
           name={name}
-          type={type}
+          type={renderType}
           placeholder={renderPlaceholderTypeText[type]}
           className={classNames(styles.input, styles[`input-${variant}`])}
         />

@@ -1,5 +1,6 @@
 import React, { createElement, forwardRef, HTMLAttributes } from "react";
 import stylesTokens from "./text.token.module.scss";
+import classnames from "classnames";
 
 type Size = "large" | "medium" | "small" | "mini";
 type Weight = "regular" | "medium" | "bold";
@@ -16,19 +17,32 @@ type TextProps = {
 export const Text = forwardRef<
   HTMLAttributes<HTMLParagraphElement | HTMLSpanElement>,
   TextProps
->(({ token, style = "normal", children, type = "p", classNames = [] }, ref) => {
-  const textToken = stylesTokens[`${token}`];
-  const textStyle = stylesTokens[`text__style--${style}`];
-  const TextType = type || "p";
-
-  return createElement(
-    TextType,
+>(
+  (
     {
-      ref,
-      className: `${textToken} ${textStyle}`,
+      token,
+      style = "normal",
+      children,
+      type = "p",
+      classNames: customClassNames = [],
+      ...rest
     },
-    children
-  );
-});
+    ref
+  ) => {
+    const textToken = stylesTokens[`${token}`];
+    const textStyle = stylesTokens[`text__style--${style}`];
+    const TextType = type || "p";
+
+    return createElement(
+      TextType,
+      {
+        ref,
+        className: classnames(textToken, textStyle, ...customClassNames),
+        ...rest,
+      },
+      children
+    );
+  }
+);
 
 Text.displayName = "Text";

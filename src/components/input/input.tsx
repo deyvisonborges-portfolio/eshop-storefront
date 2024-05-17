@@ -14,20 +14,22 @@ interface InputProps extends ComponentPropsWithRef<"input"> {
 }
 
 const renderPlaceholderTypeText: Record<InputTypeProps, string> = {
-  text: "Digite aqui",
+  text: "Digite aqui sua senha",
   password: "Senha",
   email: "Digite aqui seu e-mail",
 } as const;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { name, message, label, variant = "default", type = "text", ...props },
+    { name, message, label, required, variant = "default", type = "text", ...props },
     ref
   ) => {
     return (
       <div className={styles.container}>
         {label && (
-          <label htmlFor={name} className={styles.label}>
+          <label htmlFor={name} className={
+            classNames(styles.label, required && styles[`label-required`])
+          }>
             {label}
           </label>
         )}
@@ -37,6 +39,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           id={name}
           name={name}
           type={type}
+          required={required}
           placeholder={renderPlaceholderTypeText[type]}
           className={classNames(styles.input, styles[`input-${variant}`])}
         />

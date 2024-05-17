@@ -3,26 +3,23 @@
 import { useState, useEffect } from "react";
 
 function getWindowDimensions() {
-  if (typeof window !== "undefined") {
-    const { innerWidth: width, innerHeight: height } = window;
-    const hidexs = width >= 450;
-    const hidesm = width >= 768;
-    const hidemd = width >= 992;
-    const hidelg = width >= 1024;
-    const hidexl = width >= 1440;
+  if (typeof window === "undefined") return null;
+  const { innerWidth: width, innerHeight: height } = window;
+  const hidexs = width >= 450;
+  const hidesm = width >= 768;
+  const hidemd = width >= 992;
+  const hidelg = width >= 1024;
+  const hidexl = width >= 1440;
 
-    return {
-      width,
-      height,
-      hidexs,
-      hidesm,
-      hidemd,
-      hidelg,
-      hidexl,
-    };
-  }
-
-  throw new Error("Window is undefined");
+  return {
+    width,
+    height,
+    hidexs,
+    hidesm,
+    hidemd,
+    hidelg,
+    hidexl,
+  };
 }
 
 export default function useMediaQuery() {

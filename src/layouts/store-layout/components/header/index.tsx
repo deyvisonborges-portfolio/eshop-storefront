@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./header.module.scss";
 import Image from "next/image";
 import { BagIcon } from "@/icons/BagIcon";
@@ -11,7 +9,7 @@ import { Text } from "@/components/text";
 import useMediaQuery from "@/hooks/useDevice";
 
 export function Header() {
-  const { hidesm } = useMediaQuery();
+  // const medias = useMediaQuery();
 
   return (
     <header className={styles.container}>
@@ -26,7 +24,7 @@ export function Header() {
           />
         </Link>
 
-        {hidesm && (
+        {/* {medias?.hidesm && (
           <div className={styles["category-button"]}>
             <Image
               alt="Logo Black - eShop"
@@ -36,11 +34,11 @@ export function Header() {
             />
             <Text token="body-regular-regular">Categorias</Text>
           </div>
-        )}
+        )} */}
       </div>
 
       <div className={styles["content-right"]}>
-        {hidesm && <Search />}
+        {/* {medias?.hidesm && <Search />} */}
         <div className={styles["action-group"]}>
           <div className={styles["action-group--icons"]}>
             <FavoriteIcon />

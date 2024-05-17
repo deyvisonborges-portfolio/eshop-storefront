@@ -26,9 +26,10 @@ export function SignInPage() {
               name="password"
               type="password"
               placeholder="******"
+              required
             />
 
-            <InputCheckbox disabled={true} label="Manter-me conectado" checkboxSize="small" />
+            <InputCheckbox label="Manter-me conectado" checkboxSize="small" />
           </div>
           <Button isFull>Log In</Button>
         </div>

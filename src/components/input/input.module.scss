@@ -75,4 +75,15 @@
   font-size: s.$font-size-14;
   font-family: "Inter", sans-serif;
   font-weight: s.$font-weight-regular;
+  position: relative;
+}
+
+.label-required {
+  &::after {
+    color: t.theme-get("color-semantic-danger-50");
+    content: "*";
+    display: inline-block;
+    margin-left: s.$space-base-unit;
+    font-weight: bold;
+  }
 }

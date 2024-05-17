@@ -27,6 +27,7 @@ export const InputCheckbox = memo(
           />
           {label && (
             <Text
+              utilitie="selection-none"
               token="body-regular-regular"
               className={classNames(
                 styles.label,

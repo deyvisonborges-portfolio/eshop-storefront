@@ -1,5 +1,9 @@
+"use client";
+
 import React, { createElement, forwardRef, HTMLAttributes } from "react";
 import stylesTokens from "./text.token.module.scss";
+import { UtilsStyles } from "@/styles/utils";
+import cssUtils from "@/styles/utils.module.scss";
 import classnames from "classnames";
 
 type Size = "large" | "medium" | "small" | "mini";
@@ -12,6 +16,7 @@ type TextProps = {
   type?: "span" | "p";
   classNames?: string[];
   children: React.ReactNode;
+  utilitie?: UtilsStyles;
 } & HTMLAttributes<HTMLParagraphElement | HTMLSpanElement>;
 
 export const Text = forwardRef<
@@ -25,6 +30,7 @@ export const Text = forwardRef<
       children,
       type = "p",
       classNames: customClassNames = [],
+      utilitie,
       ...rest
     },
     ref
@@ -36,9 +42,15 @@ export const Text = forwardRef<
     return createElement(
       TextType,
       {
-        ref,
-        className: classnames(textToken, textStyle, ...customClassNames),
         ...rest,
+        ref,
+        className:
+          classnames(
+            textToken,
+            textStyle,
+            ...customClassNames,
+            cssUtils[`${utilitie}`]
+          ) || undefined,
       },
       children
     );

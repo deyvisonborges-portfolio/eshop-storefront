@@ -1,0 +1,79 @@
+//  https://moderncss.dev/pure-css-custom-styled-radio-buttons/
+
+@use "../../styles/theme" as t;
+@use "../../styles" as s;
+
+.container {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  gap: s.$space-8;
+  width: fit-content;
+
+  &:disabled {
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+.input {
+  appearance: none;
+  background: transparent;
+  border: 2px solid t.theme-get("color-neutral-grey-60");
+  border-radius: 50%;
+  cursor: pointer;
+  height: s.$space-24;
+  width: s.$space-24;
+  position: relative;
+  transform: translateY(-0.075em);
+  -webkit-appearance: none;
+  display: grid;
+  place-content: center;
+
+  &:disabled {
+    background-color: t.theme-get("color-neutral-white");
+    border: 2px solid t.theme-get("color-neutral-grey-20");
+    cursor: not-allowed;
+    filter: brightness(0.95);
+    opacity: 0.7;
+    user-select: none;
+  }
+
+  &::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  &:checked {
+    &::before {
+      background-color: t.theme-get("color-dark-black");
+      height: s.$space-18;
+      width: s.$space-18;
+      transform: scale(1);
+      position: relative;
+    }
+  }
+}
+
+.size-small {
+  height: 20px;
+  width: 20px;
+}
+
+.size-regular {
+  height: s.$space-24;
+  width: s.$space-24;
+}
+
+.label--disabled {
+  color: t.theme-get("color-neutral-grey-30");
+  cursor: not-allowed;
+  filter: brightness(0.95);
+  opacity: 0.7;
+  user-select: none;
+}

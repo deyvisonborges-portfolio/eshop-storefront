@@ -1,4 +1,4 @@
-import { Text } from "@/components/text";
+import { Text } from "@/components/core/text";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 

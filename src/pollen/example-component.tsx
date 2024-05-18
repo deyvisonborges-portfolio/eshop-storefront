@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import classNames from "classnames/bind";
 import { SizingProps } from "./sizing/sizing";
+import Image from "next/image";
 
 const cx = classNames.bind(styles);
 
@@ -27,7 +28,7 @@ const MyImageComponent: React.FC<ExampleComponentProps> = ({
     [widthClass!]: widthClass,
   });
 
-  return <img className={imageClassNames} src={src} alt={alt} />;
+  return <Image className={imageClassNames} src={src} alt={alt} width={120} height={120} />;
 };
 
 export default MyImageComponent;

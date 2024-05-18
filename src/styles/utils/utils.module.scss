@@ -1,0 +1,9 @@
+@use "../" as s;
+
+.font-bold {
+  font-weight: s.$font-weight-bold;
+}
+
+.select-none {
+  user-select: none;
+}

@@ -5,8 +5,6 @@ import { FavoriteIcon } from "@/icons/FavoriteIcon";
 import { IconUserBlack32 } from "@/icons/user-black-32";
 import { Search } from "../search";
 import Link from "next/link";
-import { Text } from "@/components/core/text";
-import useMediaQuery from "@/hooks/useDevice";
 
 export function Header() {
   // const medias = useMediaQuery();

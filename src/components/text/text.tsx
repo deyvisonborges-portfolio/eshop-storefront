@@ -2,9 +2,8 @@
 
 import React, { createElement, forwardRef, HTMLAttributes } from "react";
 import stylesTokens from "./text.token.module.scss";
-import { UtilsStyles } from "@/styles/utils";
-import cssUtils from "@/styles/utils.module.scss";
-import classnames from "classnames";
+import { mapUtilities, UtilsStyles } from "@/styles/utils/utils";
+import classNames from "classnames";
 
 type Size = "large" | "medium" | "small" | "mini";
 type Weight = "regular" | "medium" | "bold";
@@ -16,7 +15,7 @@ type TextProps = {
   type?: "span" | "p";
   classNames?: string[];
   children: React.ReactNode;
-  utilitie?: UtilsStyles;
+  utilitie?: UtilsStyles[];
 } & HTMLAttributes<HTMLParagraphElement | HTMLSpanElement>;
 
 export const Text = forwardRef<
@@ -30,7 +29,7 @@ export const Text = forwardRef<
       children,
       type = "p",
       classNames: customClassNames = [],
-      utilitie,
+      utilitie = [],
       ...rest
     },
     ref
@@ -44,13 +43,12 @@ export const Text = forwardRef<
       {
         ...rest,
         ref,
-        className:
-          classnames(
-            textToken,
-            textStyle,
-            ...customClassNames,
-            cssUtils[`${utilitie}`]
-          ) || undefined,
+        className: classNames(
+          textToken,
+          textStyle,
+          ...customClassNames,
+          ...mapUtilities(utilitie)
+        ),
       },
       children
     );

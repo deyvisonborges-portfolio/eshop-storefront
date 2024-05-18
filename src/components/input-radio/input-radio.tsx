@@ -43,7 +43,7 @@ export const InputRadio = forwardRef<HTMLInputElement, InputRadioProps>(
         />
         {label && (
           <Text
-            utilitie="selection-none"
+            utilitie={["select-none", "font-bold"]}
             token="body-regular-regular"
             className={classNames(
               styles.label,

@@ -5,6 +5,10 @@ export type UtilsStyles =
   | "font-bold"
   | "touchable"
   | "gap-8"
+  | "gap-40"
+  | "flex"
+  | "flex-column"
+  | "w-full"
   | undefined;
 
 export function mapUtilities(utilities: UtilsStyles[]): string[] {

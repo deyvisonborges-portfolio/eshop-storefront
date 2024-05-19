@@ -1,5 +1,9 @@
 @use "../../styles/" as s;
 
+.text {
+  display: inline-flex;
+}
+
 .text__style--normal {
   font-style: normal;
 }
@@ -17,5 +21,13 @@
 }
 
 .body-regular-regular {
+  @include s.bodyRegularRegular;
+}
+
+.body-medium-regular {
+  @include s.bodyMediumRegular;
+}
+
+.body-small-regular {
   @include s.bodyRegularRegular;
 }

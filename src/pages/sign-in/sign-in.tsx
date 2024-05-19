@@ -7,21 +7,10 @@ import styles from "./sign-in.module.scss";
 import { Input } from "@/components/input/input";
 import { Button } from "@/components/button";
 import { InputCheckbox } from "@/components/input-checkbox";
-import { InputRadio } from "@/components/input-radio";
-import { useState } from "react";
+import { Text } from "@/components/text";
+import Link from "next/link";
 
 export function SignInPage() {
-  const [isChecked, setIsChecked] = useState(false)
-  const [isChecked2, setIsChecked2] = useState(false)
-
-  const toggleChecked = (value: boolean) => {
-    setIsChecked(value)
-  }
-
-  const toggleChecked2 = (value: boolean) => {
-    setIsChecked2(value)
-  }
-
   return (
     <StoreLayout>
       <section className={styles["box-container"]}>
@@ -44,22 +33,28 @@ export function SignInPage() {
               required
             />
 
-            <InputCheckbox label="Manter-me conectado" checkboxSize="small" />
-
-            <InputRadio
-              radioSize="small"
-              label={isChecked ? "Enable Checkbox" : "Disable Checkbox"}
-              isChecked={isChecked}
-              toggleChecked={toggleChecked}
-            />
-            <InputRadio
-              radioSize="small"
-              label={isChecked2 ? "Enable Checkbox" : "Disable Checkbox"}
-              isChecked={isChecked2}
-              toggleChecked={toggleChecked2}
-            />
+            <div className={styles.footer}>
+              <InputCheckbox label="Manter-me conectado" checkboxSize="small" />
+              {/* TODO: create anchor next component */}
+              <Link href="/reset-password">
+                <Text utilitie={["touchable"]} token="body-medium-regular">
+                  Esqueci minha senha
+                </Text>
+              </Link>
+            </div>
           </div>
+
           <Button isFull>Log In</Button>
+          <hr />
+
+          <Text token="body-regular-regular" utilitie={["gap-8"]}>
+            Não possui conta?
+            <Link href="/register">
+              <Text type="span" token="body-regular-regular">
+                Criar conta
+              </Text>
+            </Link>
+          </Text>
         </div>
       </section>
     </StoreLayout>

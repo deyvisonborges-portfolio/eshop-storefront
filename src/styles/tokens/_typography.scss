@@ -2,10 +2,20 @@
 
 @mixin bodyLargeRegular {
   font-size: vars.$font-size-body-large;
-  font-weight: vars.$font-weight-bold;
+  font-weight: vars.$font-weight-regular;
 }
 
 @mixin bodyRegularRegular {
   font-size: vars.$font-size-body-regular;
+  font-weight: vars.$font-weight-regular;
+}
+
+@mixin bodyMediumRegular {
+  font-size: vars.$font-size-body-medium;
+  font-weight: vars.$font-weight-regular;
+}
+
+@mixin bodySmallRegular {
+  font-size: vars.$font-size-body-small;
   font-weight: vars.$font-weight-regular;
 }

@@ -7,3 +7,11 @@
 .select-none {
   user-select: none;
 }
+
+.touchable {
+  cursor: pointer;
+}
+
+.gap-8 {
+  gap: s.$space-8;
+}

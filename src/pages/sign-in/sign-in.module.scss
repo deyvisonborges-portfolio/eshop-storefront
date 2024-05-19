@@ -1,49 +1,6 @@
 @use "../../styles" as s;
 @use "../../styles/theme" as t;
 
-.container {
-  display: grid;
-  height: 100%;
-  width: 100%;
-
-  @include s.screen-min("sm") {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.content-left {
-  display: none;
-
-  @include s.screen-min("sm") {
-    background-color: t.theme-get("color-other-aquamarine-50");
-    background-image: url("/images/banner-login.png");
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.content-right {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 40px 24px;
-  width: 100%;
-
-  @include s.screen-min("sm") {
-    padding: 148px 126px 0;
-    min-width: 370px;
-  }
-}
-
-.description-group {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -51,7 +8,7 @@
   width: 100%;
 }
 
-.input {  
+.input {
   background: none;
   border: none;
   border-bottom: 1px solid t.theme-get("color-neutral-grey-20");
@@ -96,9 +53,10 @@
 .box-container {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
-  
+
   @include s.screen-min("sm") {
     margin-top: s.$space-64;
   }
@@ -111,5 +69,23 @@
   justify-content: flex-start;
   max-width: 532px;
   padding: s.$space-40 s.$space-32;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: s.$space-14;
+
+  @include s.screen-min("sm") {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.hr {
+  background-color: t.theme-get("color-neutral-grey-60");
   width: 100%;
 }

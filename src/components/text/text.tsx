@@ -10,7 +10,11 @@ type Weight = "regular" | "medium" | "bold";
 type Style = "normal" | "link" | "upper";
 
 type TextProps = {
-  token: "body-large-regular" | "body-regular-regular";
+  token:
+    | "body-large-regular"
+    | "body-regular-regular"
+    | "body-medium-regular"
+    | "body-small-regular";
   style?: Style;
   type?: "span" | "p";
   classNames?: string[];
@@ -46,6 +50,7 @@ export const Text = forwardRef<
         className: classNames(
           textToken,
           textStyle,
+          stylesTokens.text,
           ...customClassNames,
           ...mapUtilities(utilitie)
         ),

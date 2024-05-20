@@ -16,11 +16,6 @@
   text-transform: uppercase;
 }
 
-@mixin bodyLargeRegular {
-  font-size: vars.$font-size-large;
-  font-weight: vars.$font-weight-bold;
-}
-
 /*
 * Tokens
 * Type - Size - Weight

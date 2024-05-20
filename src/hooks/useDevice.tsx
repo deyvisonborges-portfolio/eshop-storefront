@@ -22,7 +22,7 @@ function getWindowDimensions() {
   };
 }
 
-export default function useMediaQuery() {
+export function useMediaQuery() {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );

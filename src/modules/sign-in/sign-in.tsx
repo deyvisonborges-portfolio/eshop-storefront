@@ -1,16 +1,16 @@
 "use client";
 
-import { Heading } from "@/components/heading";
+import { Heading } from "@/components/core/heading";
 import { StoreLayout } from "@/layouts/store-layout";
 
 import styles from "./sign-in.module.scss";
-import { Input } from "@/components/input/input";
-import { Button } from "@/components/button";
-import { InputCheckbox } from "@/components/input-checkbox";
-import { Text } from "@/components/text";
+import { Input } from "@/components/core/input/input";
+import { Button } from "@/components/core/button";
+import { InputCheckbox } from "@/components/core/input-checkbox";
+import { Text } from "@/components/core/text";
 import Link from "next/link";
 import { useFormState } from "react-dom";
-import { Form } from "@/components/form";
+import { Form } from "@/components/core/form";
 
 type FormState = {
   email: string;

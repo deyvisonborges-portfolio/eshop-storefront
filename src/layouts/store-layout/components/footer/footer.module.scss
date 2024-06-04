@@ -1,0 +1,29 @@
+@use "../../../../styles/" as s;
+
+.container {
+  padding: s.$space-16;
+  width: 100%;
+
+  @include s.screen-min("sm") {
+    padding: 40px 112px;
+  }
+}
+
+.subscribe-container {
+  display: flex;
+  flex-direction: column;
+  gap: s.$space-16;
+  max-width: 386px;
+  width: 100%;
+}
+
+.subscribe-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: s.$space-12;
+  
+  @include s.screen-min("sm") {
+    flex-direction: row;
+    gap: s.$space-24;
+  }
+}

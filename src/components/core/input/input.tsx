@@ -1,10 +1,4 @@
-import {
-  ComponentPropsWithRef,
-  forwardRef,
-  ReactNode,
-  useMemo,
-  useState,
-} from "react";
+import { ComponentPropsWithRef, forwardRef, useState } from "react";
 
 import styles from "./input.module.scss";
 import classNames from "classnames";
@@ -45,10 +39,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const [hasEyeIcon, setEyeIcon] = useState<boolean>(true);
 
-    if(type === "password") {
+    if (type === "password") {
       hasIcon = {
-        eyeIcon: true
-      }
+        eyeIcon: true,
+      };
     }
 
     return (

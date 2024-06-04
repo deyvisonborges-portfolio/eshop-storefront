@@ -7,7 +7,7 @@ import {
 
 import styles from "./button.module.scss";
 import classNames from "classnames";
-import { renderChildren } from "../_utils_/render";
+import { renderChildren } from "../../_utils_/render";
 import { Spinner } from "../spinner";
 
 interface ButtonProps extends ComponentPropsWithRef<"button"> {

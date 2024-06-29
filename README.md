@@ -49,3 +49,4 @@ https://www.figma.com/file/Mm4HiMIeqRsAXPiKDxv1o5/Figma-E-Commerce-System-1.0?ty
 - URL Query Params
 - Headers
 - Redirect
+- API Wrapper

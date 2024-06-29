@@ -31,3 +31,21 @@ https://www.figma.com/file/fIuZJrv61nej4k0kydp1bE/Minimal-E-Commerce-App---Desig
 
 ### Referencia principal
 https://www.figma.com/file/Mm4HiMIeqRsAXPiKDxv1o5/Figma-E-Commerce-System-1.0?type=design&node-id=1-264&mode=design&t=JCfIZoRLkzj0R302-0
+
+
+## O que esse projeto contempla?
+- Server Components
+- Client Components
+- Client Bounderies
+- State Management
+  - Server Side State Management
+- Dynamic Routes
+- Aninhated Layouts
+- Route Handlers
+  /api/{route}
+- Metadata
+- Route Groups
+- Server Actions
+- URL Query Params
+- Headers
+- Redirect

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import "@/styles/global.scss";
 import MyImageComponent from "@/pollen/example-component";
+import { createStore } from "../../lib/owner-state";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const testState = createStore<{ value: number }>({
+    initialState: {
+      value: 0,
+    },
+  });
+
+  testState.setState({ value: 1 });
+
   return (
     <html lang="en">
       <body className={inter.className}>

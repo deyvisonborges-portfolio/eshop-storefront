@@ -1,0 +1,81 @@
+@use "../../styles" as s;
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+  padding: 96px 120px;
+  width: 100%;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  input {
+    border-radius: 4px;
+    padding: 12px 16px;
+    width: 84px;
+  }
+}
+
+.gallery-featured-image {
+  background-color: s.theme-get("color-neutral-grey-10");
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-timeline {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+  flex-direction: row;
+  object-fit: cover;
+  width: 100%;
+
+  :hover {
+    border: 1px solid s.theme-get("color-neutral-grey-20");
+    scale: 1.1;
+  }
+}
+
+.gallery-mini-image {
+  background-color: s.theme-get("color-neutral-grey-10");
+}
+
+.attribute-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  height: 84px;
+  width: 84px;
+}
+
+.attribute {
+  border: 1px solid s.theme-get("color-neutral-grey-40");
+  padding: 4px 8px;
+  width: 100%;
+
+  :hover {
+    background: s.theme-get("color-dark-black");
+    color: s.theme-get("color-neutral-white");
+  }
+}
+
+.blur {
+  filter: blur(5px);
+  transition: filter 0.3s ease-in;
+}
+
+.remove-blur {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+}

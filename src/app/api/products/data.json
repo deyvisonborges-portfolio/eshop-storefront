@@ -1,24 +1,64 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Product 001",
-      "description": "Some description by product 001"
+      "id": "1",
+      "name": "Nike Air Zoom Pegasus 35",
+      "size": "M",
+      "color": "black",
+      "images": [
+        "https://demo.evershop.io/assets/catalog/8634/1312/plv3495-Black-single.png",
+        "https://demo.evershop.io/assets/catalog/5580/3189/plv8051-Black-single.png"
+      ]
     },
     {
-      "id": 2,
-      "name": "Product 002",
-      "description": "Some description by product 002"
+      "id": "1",
+      "name": "Nike Air Zoom Pegasus 35",
+      "size": "M",
+      "color": "green",
+      "images": [
+        "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-Green-single.png",
+        "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-Green-single.png"
+      ]
     },
     {
-      "id": 3,
-      "name": "Product 003",
-      "description": "Some description by product 003"
+      "id": "1",
+      "name": "Nike Air Zoom Pegasus 35",
+      "size": "L",
+      "color": "green",
+      "images": [
+        "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-Green-single.png",
+        "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-Green-single.png"
+      ]
     },
     {
-      "id": 4,
-      "name": "Product 004",
-      "description": "Some description by product 004"
+      "id": "2",
+      "name": "Adidas UltraBoost",
+      "size": "S",
+      "color": "blue",
+      "images": [
+        "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-blue-s-1.png",
+        "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-blue-s-2.png"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Seasonal Color Chuck 70",
+      "size": "M",
+      "color": "pink",
+      "images": [
+        "https://demo.evershop.io/assets/catalog/6634/7682/plv3753-Pink-single.png",
+        "https://demo.evershop.io/assets/catalog/2515/1722/plv7806-Pink-single.png"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Seasonal Color Chuck 70",
+      "size": "L",
+      "color": "pink",
+      "images": [
+        "https://demo.evershop.io/assets/catalog/6634/7682/plv3753-Pink-single.png",
+        "https://demo.evershop.io/assets/catalog/2515/1722/plv7806-Pink-single.png"
+      ]
     }
   ]
 }

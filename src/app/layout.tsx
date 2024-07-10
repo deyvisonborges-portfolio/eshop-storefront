@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "@/styles/global.scss";
 import MyImageComponent from "@/pollen/example-component";
 import { createStore } from "../../lib/owner-state";
+import { CartProvider } from "@/providers/cart.provider";
 
 const inter = Inter({ subsets: ["latin"] });
 

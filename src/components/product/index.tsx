@@ -3,8 +3,11 @@ import { IconHearthBlack24 } from "@/icons/hearth-black-24";
 import styles from "./product.module.scss";
 import { IconQuickViewBlack24 } from "@/icons/quick-view-black-24";
 import { IconDeleteBlack24 } from "@/icons/delete-black-24";
+import { ProductModel } from "./product.model";
+import { useState } from "react";
 
 interface ProductProps {
+  data: ProductModel;
   actions?: Partial<Record<"trash" | "quickview" | "favorite", boolean>>;
   enableTrash?: boolean;
 }
@@ -23,6 +26,7 @@ type ProductComponentModel = {
 };
 
 export const Product = ({
+  data = {} as ProductModel,
   actions = {
     favorite: true,
     quickview: true,
@@ -31,6 +35,12 @@ export const Product = ({
   enableTrash,
   ...props
 }: ProductProps) => {
+  const [isFavorite, setIsFavorite] = useState<boolean>();
+
+  const handleClickInFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className={styles["product"]}>
       <div className={styles["product-image--container"]}>
@@ -49,8 +59,11 @@ export const Product = ({
             </div>
           )}
           {actions.favorite && (
-            <div className={styles["product-image--action-group--icon"]}>
-              <IconHearthBlack24 />
+            <div
+              onClick={handleClickInFavorite}
+              className={styles["product-image--action-group--icon"]}
+            >
+              <IconHearthBlack24 {...(isFavorite && { color: "red" })} />
             </div>
           )}
           {actions.quickview && (
@@ -66,10 +79,12 @@ export const Product = ({
       </div>
 
       <div className={styles["product-info"]}>
-        <p className={styles["product-info--title"]}>iWatch SE 3</p>
+        <p className={styles["product-info--title"]}>{data.description}</p>
         <div className={styles["product-info--price--container"]}>
-          <span className={styles["product-info--price"]}>R$ 2990,89</span>
-          <span className={styles["product-info--discounted"]}>R$ 1990,90</span>
+          <span className={styles["product-info--price"]}>R$ {data.price}</span>
+          <span className={styles["product-info--discounted"]}>
+            R$ {data.priceWithDiscount}
+          </span>
         </div>
       </div>
     </div>

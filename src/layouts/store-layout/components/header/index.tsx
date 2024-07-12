@@ -7,8 +7,6 @@ import { Search } from "../search";
 import Link from "next/link";
 
 export function Header() {
-  // const medias = useMediaQuery();
-
   return (
     <header className={styles.container}>
       <div className={styles["content-left"]}>
@@ -21,18 +19,6 @@ export function Header() {
             width={124}
           />
         </Link>
-
-        {/* {medias?.hidesm && (
-          <div className={styles["category-button"]}>
-            <Image
-              alt="Logo Black - eShop"
-              src="/svgs/menu-line-white.svg"
-              height={24}
-              width={24}
-            />
-            <Text token="body-regular-regular">Categorias</Text>
-          </div>
-        )} */}
       </div>
 
       <div className={styles["content-right"]}>
@@ -42,7 +28,7 @@ export function Header() {
             <FavoriteIcon />
             <BagIcon />
 
-            <Link href="/identity/sign-in">
+            <Link href="/sign-in">
               <IconUserBlack32 />
             </Link>
           </div>

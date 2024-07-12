@@ -5,6 +5,7 @@ import "@/styles/global.scss";
 import MyImageComponent from "@/pollen/example-component";
 import { createStore } from "../../lib/owner-state";
 import { CartProvider } from "@/providers/cart.provider";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,17 @@ export default function RootLayout({
             width: "w-fx-120",
           }}
         /> */}
+        <NextTopLoader
+          color="#2299DD"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={true}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+        />
         {children}
       </body>
     </html>

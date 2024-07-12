@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/core/button";
 import styles from "./product-details.module.scss";
-import { cartContext, CartProvider } from "@/providers/cart.provider";
 
 const productData = {
   products: [
@@ -63,7 +62,6 @@ const productData = {
 };
 
 export const ProductDetails = () => {
-  const { items, addToCart } = useContext(cartContext);
   const [isImageLoading, setImageLoading] = useState(true);
   const productId = "1";
   const router = useRouter();
@@ -77,21 +75,20 @@ export const ProductDetails = () => {
   //   return await new Promise((resolve) => setTimeout(() => resolve, 3000))
   // }
 
-  // useEffect(() => {
-  //   if (size || color) {
-  //     const v = promessa()
-  //     setImages(v as any);
-  //     setImageLoading(false);
-  //   }
-  // }, [size, color]);
+  useEffect(() => {
+    if (size || color) {
+      productData.products.filter((p) => p.size === size || p.color === color);
+      setImageLoading(true);
+    }
+  }, [size, color]);
 
-  // const fetchImages = async (size: string, color: string) => {
-  //   setImageLoading(true);
-  //   const products = productData.products.find(
-  //     (p) => productId === p.id && (p.size === size || p.color === color)
-  //   );
-  //   return products ? products.images : [];
-  // };
+  const fetchImages = async (size: string, color: string) => {
+    setImageLoading(true);
+    const products = productData.products.find(
+      (p) => productId === p.id && (p.size === size || p.color === color)
+    );
+    return products ? products.images : [];
+  };
 
   const handleAttributeChange = (attribute: string, value: string) => {
     if (attribute === "size") {
@@ -110,7 +107,6 @@ export const ProductDetails = () => {
   return (
     <section className={styles.container}>
       <div className={styles["container-left"]}>
-        {JSON.stringify(items)}
         <Image
           onLoad={() => setImageLoading(false)}
           // className={`${styles["gallery-featured-image"]} ${
@@ -151,7 +147,7 @@ export const ProductDetails = () => {
         <span>SKU: NJC83763</span>
         <input type="text" max={2} />
 
-        <Button onClick={() => addToCart(``)}>Adicionar</Button>
+        <Button>Adicionar</Button>
 
         <div className={styles["attribute-container"]}>
           <div

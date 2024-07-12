@@ -3,7 +3,7 @@ import { ProductDetails } from "@/views/product-details";
 
 type RouteProps = {
   params: {
-    id: string;
+    id: string; 
     slug: string;
   };
 };

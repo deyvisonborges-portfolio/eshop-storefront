@@ -22,15 +22,18 @@ export function Header() {
       </div>
 
       <div className={styles["content-right"]}>
-        {/* {medias?.hidesm && <Search />} */}
+        <Search />
         <div className={styles["action-group"]}>
           <div className={styles["action-group--icons"]}>
             <FavoriteIcon />
             <BagIcon />
 
-            <Link href="/sign-in">
-              <IconUserBlack32 />
-            </Link>
+            <div className={styles['action-group--user']}>
+              Hello, Deyvison
+              <Link href="/sign-in">
+                <IconUserBlack32 />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

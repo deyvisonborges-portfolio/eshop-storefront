@@ -1,6 +1,5 @@
 "use client";
 
-import { Product } from "@/components/product";
 import { ProductList } from "@/components/product-list";
 import { ProductModel } from "@/components/product/product.model";
 import { HomePage } from "@/modules/home";

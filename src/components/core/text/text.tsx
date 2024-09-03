@@ -15,7 +15,7 @@ type TextProps = {
     | "body-regular-regular"
     | "body-medium-regular"
     | "body-small-regular";
-  style?: Style;
+  zstyle?: Style;
   type?: "span" | "p";
   classNames?: string[];
   children: React.ReactNode;
@@ -29,7 +29,7 @@ export const Text = forwardRef<
   (
     {
       token,
-      style = "normal",
+      zstyle = "normal",
       children,
       type = "p",
       classNames: customClassNames = [],
@@ -39,7 +39,7 @@ export const Text = forwardRef<
     ref
   ) => {
     const textToken = stylesTokens[`${token}`];
-    const textStyle = stylesTokens[`text__style--${style}`];
+    const textStyle = stylesTokens[`text__style--${zstyle}`];
     const TextType = type || "p";
 
     return createElement(

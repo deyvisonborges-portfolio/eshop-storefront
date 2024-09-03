@@ -1,84 +1,84 @@
-@use "../../../styles/theme" as t;
-@use "../../../styles" as s;
+// @use "../../../styles/theme" as t;
+// @use "../../../styles" as s;
 
-.button {
-  align-items: center;
-  border: 0;
-  cursor: pointer;
-  display: flex;
-  font-weight: s.$font-weight-medium;
-  gap: s.$space-12;
-  justify-content: center;
-  outline: none;
-  text-align: center;
-  user-select: none;
-  appearance: initial;
-  -webkit-appearance: none;
-  -webkit-user-select: none;
-  white-space: nowrap;
+// .button {
+//   align-items: center;
+//   border: 0;
+//   cursor: pointer;
+//   display: flex;
+//   font-weight: s.$font-weight-medium;
+//   gap: s.$space-12;
+//   justify-content: center;
+//   outline: none;
+//   text-align: center;
+//   user-select: none;
+//   appearance: initial;
+//   -webkit-appearance: none;
+//   -webkit-user-select: none;
+//   white-space: nowrap;
 
-  /* Disabled */
-  &:disabled,
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: 0.8;
-  }
-}
+//   /* Disabled */
+//   &:disabled,
+//   &[disabled] {
+//     cursor: not-allowed;
+//     opacity: 0.8;
+//   }
+// }
 
-.button--primary {
-  background-color: t.theme-get("color-dark-black");
-  color: t.theme-get("color-neutral-white");
-}
+// .button--primary {
+//   background-color: t.theme-get("color-dark-black");
+//   color: t.theme-get("color-neutral-white");
+// }
 
-.button--secondary {
-  background-color: t.theme-get("color-neutral-white");
-  border: 1px solid t.theme-get("border-color-lighter");
-  color: t.theme-get("color-dark-black");
+// .button--secondary {
+//   background-color: t.theme-get("color-neutral-white");
+//   border: 1px solid t.theme-get("border-color-lighter");
+//   color: t.theme-get("color-dark-black");
 
-  @include s.dark-mode {
-    color: t.theme-get("color-dark-black-40");
-  }
-}
+//   @include s.dark-mode {
+//     color: t.theme-get("color-dark-black-40");
+//   }
+// }
 
-.button--ghost {
-  background: none;
-  color: t.theme-get("color-dark-black");
+// .button--ghost {
+//   background: none;
+//   color: t.theme-get("color-dark-black");
 
-  &:hover:not(:disabled) {
-    background-color: t.theme-get("color-neutral-grey-20");
-  }
-}
+//   &:hover:not(:disabled) {
+//     background-color: t.theme-get("color-neutral-grey-20");
+//   }
+// }
 
-.button--small {
-  border-radius: s.$border-radius-medium;
-  font-size: 14px;
-  height: fit-content;
-  min-height: s.$space-40;
-  min-width: 7rem;
-  padding: s.$space-8 s.$space-16;
-  width: fit-content;
-}
+// .button--small {
+//   border-radius: s.$border-radius-medium;
+//   font-size: 14px;
+//   height: fit-content;
+//   min-height: s.$space-40;
+//   min-width: 7rem;
+//   padding: s.$space-8 s.$space-16;
+//   width: fit-content;
+// }
 
-.button--regular {
-  border-radius: s.$border-radius-medium;
-  font-size: s.$font-size-16;
-  height: fit-content;
-  min-height: s.$space-48;
-  min-width: 8rem;
-  padding: s.$space-8 s.$space-16;
-  width: fit-content;
-}
+// .button--regular {
+//   border-radius: s.$border-radius-medium;
+//   font-size: s.$font-size-16;
+//   height: fit-content;
+//   min-height: s.$space-48;
+//   min-width: 8rem;
+//   padding: s.$space-8 s.$space-16;
+//   width: fit-content;
+// }
 
-.button--medium {
-  border-radius: s.$border-radius-medium;
-  font-size: s.$font-size-18;
-  height: fit-content;
-  min-height: s.$space-56;
-  min-width: 8rem;
-  padding: s.$space-12 s.$space-16;
-  width: fit-content;
-}
+// .button--medium {
+//   border-radius: s.$border-radius-medium;
+//   font-size: s.$font-size-18;
+//   height: fit-content;
+//   min-height: s.$space-56;
+//   min-width: 8rem;
+//   padding: s.$space-12 s.$space-16;
+//   width: fit-content;
+// }
 
-.button--full-width {
-  width: 100%;
-}
+// .button--full-width {
+//   width: 100%;
+// }

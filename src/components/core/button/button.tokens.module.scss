@@ -1,8 +1,15 @@
-// @use "./button.module.scss";
+// // @use "./button.module.scss";
 
-// @mixin primaryRegularSmall {
-//   background-color: t.theme-get("color-dark-black");
-//   color: t.theme-get("color-neutral-white");
+// // @mixin primaryRegularSmall {
+// //   background-color: t.theme-get("color-dark-black");
+// //   color: t.theme-get("color-neutral-white");
 
-//   @include button--primary;
-// }
+// //   @include button--primary;
+// // }
+
+// @use "../../../styles/" as vars;
+
+// @mixin squaredRegularPrimary {}
+// @mixin squaredRegularSecondary {}
+// @mixin squaredRegularTertiary {}
+// @mixin roundedRegularPrimary {}

@@ -6,4 +6,5 @@ export type ButtonColorType = "primary" | "secondary";
 // | "error"
 // | "info";
 
+export type ButtonStyle = 'text' | 'link' | "ghost" | 'solid' 
 export type ButtonVariantSize = "small" | "regular" | "medium";

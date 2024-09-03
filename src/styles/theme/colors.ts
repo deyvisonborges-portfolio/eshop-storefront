@@ -1,0 +1,23 @@
+export type Colors = {
+  "color-brand-blue": string;
+  "color-brand-green": string;
+  "color-brand-orange": string;
+  "color-brand-purple": string;
+  "color-dark-black": string;
+  "color-dark-black-40": string;
+  "color-neutral-white": string;
+  "color-neutral-grey-10": string;
+  "color-neutral-grey-20": string;
+  "color-neutral-grey-30": string;
+  "color-neutral-grey-40": string;
+  "color-neutral-grey-50": string;
+  "color-neutral-grey-60": string;
+  "color-semantic-informative-blue-10": string;
+  "color-semantic-informative-blue-50": string;
+  "color-semantic-warning-yellow-10": string;
+  "color-semantic-warning-yellow-50": string;
+  "color-semantic-danger-red-10": string;
+  "color-semantic-danger-red-50": string;
+  "color-semantic-success-green-10": string;
+  "color-semantic-success-green-50": string;
+};

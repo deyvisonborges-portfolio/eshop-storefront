@@ -1,21 +1,28 @@
-@use "../variables" as vars;
+@use "../variables" as var;
+@use "./sizing" as size;
+
+@mixin heading-primary-regular {
+  font-size: size.$relative-size-56;
+  line-height: size.$static-size-84;
+  font-weight: var.$font-weight-regular;
+}
 
 @mixin bodyLargeRegular {
-  font-size: vars.$font-size-body-large;
-  font-weight: vars.$font-weight-regular;
+  font-size: size.$font-size-body-large;
+  font-weight: size.$font-weight-regular;
 }
 
 @mixin bodyRegularRegular {
-  font-size: vars.$font-size-body-regular;
-  font-weight: vars.$font-weight-regular;
+  font-size: size.$font-size-body-regular;
+  font-weight: size.$font-weight-regular;
 }
 
 @mixin bodyMediumRegular {
-  font-size: vars.$font-size-body-medium;
-  font-weight: vars.$font-weight-regular;
+  font-size: size.$font-size-body-medium;
+  font-weight: size.$font-weight-regular;
 }
 
 @mixin bodySmallRegular {
-  font-size: vars.$font-size-body-small;
-  font-weight: vars.$font-weight-regular;
+  font-size: size.$font-size-body-small;
+  font-weight: size.$font-weight-regular;
 }

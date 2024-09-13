@@ -1,5 +1,9 @@
 export class Email {
   static value() {
-    return ""
+    return "";
+  }
+
+  validate(email: string) {
+    return email.match(/i/);
   }
 }

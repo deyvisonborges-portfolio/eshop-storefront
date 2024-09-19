@@ -1,0 +1,1 @@
+O épico envolve todos os fluxos de autenticação do usuário no sistema, incluindo login (signin), logout, registro e recuperação de senha.

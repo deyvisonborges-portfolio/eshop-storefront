@@ -102,12 +102,12 @@ Feature:
     - A aplicação deve lidar com erros de autenticação (ex: cancelamento pelo usuário, falha na resposta do provedor).
 
     > > Tarefas
+
     - Configurar as bibliotecas de autenticação (ex: OAuth, OpenID Connect) para os provedores escolhidos.
     - Implementar a lógica de autenticação para Google.
     - Implementar a lógica de autenticação para Facebook.
     - Implementar tratamento de erros específicos para cada provedor
     - Adicionar o redirecionamento do usuário após login bem-sucedido.
-    - Testar a integração com os provedores para garantir o funcionamento correto.
 
 - Integração com o serviço Authorizer
 
@@ -128,6 +128,34 @@ Feature:
     - Implementar tratamento de erros com mensagens claras (ex: mensagens de timeout, autenticação falha).
     - Adicionar suporte a rotas dinâmicas e parâmetros de requisição.
     - Criar testes unitários para validar a comunicação com o serviço.
+
+**Integracoes (epico)**
+
+- `feature` - Configurações de comunicação
+
+  > Abrange todas as operações necessárias para criar e configurar os clientes HTTP que irão consumir os serviços internos e externos da empresa.
+
+  - `user story` - Configurar Cliente HTTP para Serviço Interno
+
+  > Como desenvolvedor, eu quero configurar um cliente HTTP para se comunicar com os serviços internos da empresa para que possamos consumir as APIs com autenticação adequada.
+
+  > > Critérios de Aceitação:
+
+  - O cliente HTTP deve suportar autenticação (ex: tokens JWT).
+  - Deve permitir a configuração de cabeçalhos padrão (ex: Authorization).
+  - Deve incluir tratamento de erros e retorno de mensagens claras em caso de falhas.
+
+  > > Tarefas
+
+  - Escolher e configurar a biblioteca HTTP (ex: Axios, Fetch) para o módulo.
+  - Implementar um cliente HTTP que inclua tokens de autenticação nos cabeçalhos das requisições.
+  - Implementar tratamento de erros com mensagens claras (ex: mensagens de timeout, autenticação falha).
+  - Adicionar suporte a rotas dinâmicas e parâmetros de requisição.
+  - Criar testes unitários para validar a comunicação com o serviço.
+
+- `feature` - Integração com Serviço de Autenticação
+
+  > Envolve todas as operações e funcionalidades necessárias para se comunicar com o serviço de autenticação, como login, registro, renovação de token, etc.
 
   - Autenticar do usuário
 

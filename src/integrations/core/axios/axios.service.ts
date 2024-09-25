@@ -19,7 +19,8 @@ export class AxiosService {
   }
 
   private get getAuthorization() {
-    const accessToken = localStorage.getItem("access-token") || "";
+    const accessToken =
+      typeof window !== "undefined" ? localStorage.getItem("access-token") : "";
     return accessToken ? { Authorization: `Bearer ${accessToken}` } : {};
   }
 

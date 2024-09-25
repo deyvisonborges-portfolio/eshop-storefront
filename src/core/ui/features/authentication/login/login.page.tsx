@@ -1,3 +1,5 @@
+'usec client'
+
 import { useLogin } from "./hooks/useLogin";
 
 export function LoginPage() {
@@ -5,7 +7,7 @@ export function LoginPage() {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <input type="email" name="email" id="email" />
         <input type="password" name="password" id="password" />
         <button type="submit">Autenticar</button>

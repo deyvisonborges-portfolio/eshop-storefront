@@ -1,3 +1,4 @@
+import { AuthProvider } from "@/security/auth-provider";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -33,7 +34,7 @@ export default function RootLayout({
           speed={200}
           shadow="0 0 10px #2299DD,0 0 5px #2299DD"
         />
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
